@@ -1,0 +1,764 @@
+{
+  "APP": {
+    "TITLE": "ระบบสารสนเทศทรัพยากรบุคคล",
+    "SUBTITLE": "ศูนย์กลางจัดการงานบุคคลแบบครบวงจร",
+    "SIDEBAR_TAGLINE": "ดูแลคน เงินเดือน และข้อมูลเชิงลึกในที่เดียว",
+    "LANGUAGE": {
+      "EN": "อังกฤษ",
+      "TH": "ไทย"
+    },
+    "USER": {
+      "NAME": "อเล็กซ์ มอร์แกน",
+      "ROLE": "ผู้ดูแลระบบ"
+    }
+  },
+  "COMMON": {
+    "SECTIONS": {
+      "FILTERS": "ตัวกรอง"
+    },
+    "ACTIONS": {
+      "RESET_FILTERS": "ล้างตัวกรอง",
+      "EXPORT": "ส่งออก",
+      "APPLY_FILTERS": "นำตัวกรองไปใช้"
+    },
+    "SELECT": {
+      "PLACEHOLDER": "กรุณาเลือก"
+    },
+    "TABLE": {
+      "ACTIONS": "การทำงาน",
+      "TOTAL_RECORDS": "รวมทั้งหมด {{count}} รายการ",
+      "NO_DATA": "ยังไม่มีข้อมูลในรายการ"
+    },
+    "PAGINATION": {
+      "PAGE_SIZE": "จำนวนต่อหน้า",
+      "RANGE": "แสดง {{start}}-{{end}} จาก {{total}} รายการ",
+      "PREV": "ก่อนหน้า",
+      "NEXT": "ถัดไป"
+    },
+    "FIELDS": {
+      "PERIOD": "ช่วงเวลา",
+      "PAY_PERIOD": "รอบจ่ายเงินเดือน",
+      "PAY_GROUP": "กลุ่มการจ่าย",
+      "NAME": "ชื่อ",
+      "DEPARTMENT": "แผนก",
+      "STATUS": "สถานะ",
+      "EMPLOYEE_ID": "รหัสพนักงาน",
+      "KEYWORD": "คำค้น",
+      "LOCATION": "สถานที่",
+      "DATE_RANGE": "ช่วงวันที่",
+      "SURVEY": "แบบสำรวจ",
+      "YEAR": "ปี",
+      "LEAVE_TYPE": "ประเภทการลา",
+      "START_DATE": "วันที่เริ่ม",
+      "END_DATE": "วันที่สิ้นสุด",
+      "EMPLOYEE": "พนักงาน",
+      "MONTH": "เดือน",
+      "CATEGORY": "หมวดหมู่",
+      "ROLE": "บทบาท",
+      "PHONE": "เบอร์โทร",
+      "TEMPLATE": "แม่แบบ"
+    },
+    "PLACEHOLDER": {
+      "SEARCH_NAME": "ค้นหาจากชื่อ",
+      "ENTER_KEYWORD": "พิมพ์คำค้น"
+    },
+    "SELECT_OPTIONS": {
+      "NONE": "--"
+    },
+    "ERROR": {
+      "LOAD_FAILED": "ไม่สามารถโหลดข้อมูลได้ กรุณาลองใหม่อีกครั้ง"
+    },
+    "STATUSES": {
+      "ALL": "ทุกสถานะ",
+      "ACTIVE": "เปิดใช้งาน",
+      "INACTIVE": "ปิดใช้งาน",
+      "ONBOARDING": "รอเริ่มงาน",
+      "PENDING": "รอดำเนินการ",
+      "APPROVED": "อนุมัติ",
+      "REJECTED": "ปฏิเสธ",
+      "COMPLETED": "เสร็จสมบูรณ์",
+      "IN_PROGRESS": "กำลังดำเนินการ",
+      "SUBMITTED": "ส่งแล้ว",
+      "SUSPENDED": "ถูกระงับ",
+      "CLOSED": "ปิดแล้ว"
+    },
+    "DEPARTMENTS": {
+      "ALL": "ทุกแผนก",
+      "HR": "ทรัพยากรบุคคล",
+      "IT": "เทคโนโลยี",
+      "FINANCE": "การเงิน"
+    },
+    "LOCATIONS": {
+      "ALL": "ทุกสาขา",
+      "HQ": "สำนักงานใหญ่",
+      "REGIONAL": "สาขาภูมิภาค"
+    },
+    "PERIODS": {
+      "THIS_MONTH": "เดือนนี้",
+      "LAST_MONTH": "เดือนก่อน",
+      "THIS_QUARTER": "ไตรมาสนี้",
+      "CURRENT_MONTH": "เดือนปัจจุบัน",
+      "CURRENT_QUARTER": "ไตรมาสปัจจุบัน",
+      "LAST_QUARTER": "ไตรมาสก่อน",
+      "CURRENT_YEAR": "ปีปัจจุบัน",
+      "LAST_YEAR": "ปีก่อน",
+      "NEXT_YEAR": "ปีถัดไป",
+      "CUSTOM": "กำหนดเอง"
+    },
+    "YEARS": {
+      "CURRENT": "ปีปัจจุบัน",
+      "LAST": "ปีก่อน"
+    },
+    "MONTHS": {
+      "CURRENT": "เดือนปัจจุบัน",
+      "NEXT": "เดือนถัดไป"
+    },
+    "ROLES": {
+      "ALL": "ทุกบทบาท",
+      "USER": "พนักงาน",
+      "MANAGER": "ผู้จัดการ",
+      "ADMIN": "ผู้ดูแลระบบ"
+    }
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "แดชบอร์ด",
+    "EMPLOYEE_RECORDS": {
+      "TITLE": "ข้อมูลพนักงาน",
+      "ALL": "พนักงานทั้งหมด",
+      "PROFILE": "โปรไฟล์พนักงาน",
+      "SEARCH": "ค้นหาพนักงาน"
+    },
+    "LEAVE_MANAGEMENT": {
+      "TITLE": "การจัดการการลา",
+      "MY_REQUESTS": "คำขอลาของฉัน",
+      "CREATE_REQUEST": "บันทึกคำขอลา",
+      "TEAM_REQUESTS": "คำขอลาทีม",
+      "HISTORY": "ประวัติการลา"
+    },
+    "PAYROLL": {
+      "TITLE": "เงินเดือน",
+      "MY_PAYSLIP": "สลิปเงินเดือนของฉัน",
+      "SUMMARY": "สรุปเงินเดือน",
+      "GENERATE": "ประมวลผลสลิป"
+    },
+    "PERFORMANCE": {
+      "TITLE": "ผลการประเมิน",
+      "MY_REVIEWS": "ของฉัน",
+      "TEAM_REVIEWS": "ของทีม",
+      "CREATE": "สร้างการประเมิน"
+    },
+    "TRAINING": {
+      "TITLE": "การฝึกอบรม",
+      "CALENDAR": "ปฏิทินฝึกอบรม",
+      "PROGRESS": "ความคืบหน้าของฉัน",
+      "REQUESTS": "คำขอฝึกอบรม",
+      "CREATE_PROGRAM": "สร้างหลักสูตร"
+    },
+    "ENGAGEMENT": {
+      "TITLE": "ความผูกพัน",
+      "SURVEYS": "แบบสำรวจ",
+      "RESULTS": "ผลสำรวจ",
+      "CREATE": "สร้างแบบสำรวจ"
+    },
+    "REPORTS": {
+      "TITLE": "รายงาน",
+      "EMPLOYEE": "รายงานพนักงาน",
+      "LEAVE": "รายงานการลา",
+      "PAYROLL": "รายงานเงินเดือน",
+      "PERFORMANCE": "รายงานผลประเมิน",
+      "EXPORT": "ส่งออกข้อมูล"
+    },
+    "USER_MANAGEMENT": {
+      "TITLE": "จัดการผู้ใช้",
+      "LIST": "รายชื่อผู้ใช้",
+      "CREATE": "เพิ่มผู้ใช้",
+      "ROLES": "บทบาทและสิทธิ์"
+    },
+    "SETTINGS": {
+      "TITLE": "ตั้งค่า",
+      "PROFILE": "โปรไฟล์",
+      "NOTIFICATIONS": "การแจ้งเตือน",
+      "SYSTEM": "ตั้งค่าระบบ",
+      "SECURITY": "ความปลอดภัย"
+    }
+  },
+  "PAGES": {
+    "DASHBOARD": {
+      "TITLE": "ภาพรวมแดชบอร์ด",
+      "SUBTITLE": "ติดตามคำขอ อนุมัติ และประกาศสำคัญ",
+      "CONTENT_TITLE": "วิดเจ็ตหลัก",
+      "CONTENT_SUBTITLE": "การ์ดสถานะและตัวชี้วัด",
+      "TODO": "TODO: เชื่อมข้อมูลแดชบอร์ดและปุ่มทางลัด",
+      "ACTIONS": {
+        "CREATE_REQUEST": "สร้างคำขอ",
+        "APPROVALS": "ไปที่กล่องอนุมัติ"
+      }
+    },
+    "EMPLOYEE_RECORDS": {
+      "LIST": {
+        "TITLE": "พนักงานทั้งหมด",
+        "SUBTITLE": "ดูและจัดการข้อมูลพนักงาน",
+        "CONTENT_TITLE": "สารบัญพนักงาน",
+        "CONTENT_SUBTITLE": "กรองตามแผนก ระดับงาน หรือสถานะ",
+        "TODO": "TODO: เชื่อมต่อ API รายชื่อพนักงานและปุ่มลัด",
+        "ACTIONS": {
+          "ADD": "เพิ่มพนักงาน"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "รหัสพนักงาน",
+          "NAME": "ชื่อ",
+          "POSITION": "ตำแหน่ง",
+          "DEPARTMENT": "แผนก",
+          "STATUS": "สถานะ"
+        }
+      },
+      "PROFILE": {
+        "TITLE": "โปรไฟล์พนักงาน",
+        "SUBTITLE": "ดูและปรับปรุงข้อมูลส่วนบุคคล",
+        "CONTENT_TITLE": "ภาพรวมโปรไฟล์",
+        "CONTENT_SUBTITLE": "ข้อมูลส่วนตัว รายละเอียดงาน และไฟล์แนบ",
+        "TODO": "TODO: จัดแท็บโปรไฟล์และแบบฟอร์มแก้ไข",
+        "ACTIONS": {
+          "EDIT": "แก้ไขโปรไฟล์",
+          "DOWNLOAD": "ดาวน์โหลดข้อมูล",
+          "MORE": "การทำงานเพิ่มเติม"
+        },
+        "PLACEHOLDER": {
+          "EMPLOYEE_ID": "ค้นหาด้วยรหัสพนักงาน"
+        }
+      },
+      "SEARCH": {
+        "TITLE": "ค้นหาพนักงาน",
+        "SUBTITLE": "ค้นหาข้อมูลเชิงลึกแบบหลายเงื่อนไข",
+        "CONTENT_TITLE": "ผลการค้นหา",
+        "CONTENT_SUBTITLE": "รายชื่อที่ตรงเงื่อนไข",
+        "TODO": "TODO: เชื่อมต่อการค้นหาขั้นสูงและการส่งออก",
+        "ACTIONS": {
+          "SAVE_FILTER": "บันทึกตัวกรอง"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "รหัสพนักงาน",
+          "NAME": "ชื่อ",
+          "DEPARTMENT": "แผนก",
+          "LEVEL": "ระดับ"
+        }
+      }
+    },
+    "LEAVE": {
+      "OPTIONS": {
+        "ALL_TYPES": "ทุกประเภทการลา",
+        "ANNUAL": "ลาพักร้อน",
+        "SICK": "ลาป่วย",
+        "UNPAID": "ลาพักงานไม่รับค่าจ้าง"
+      },
+      "MY": {
+        "TITLE": "คำขอลาของฉัน",
+        "SUBTITLE": "ยื่นและติดตามสถานะการลา",
+        "CONTENT_TITLE": "ภาพรวมคำขอ",
+        "CONTENT_SUBTITLE": "ลำดับตามสถานะล่าสุด",
+        "TODO": "TODO: เชื่อมตารางคำขอลากับขั้นตอนอนุมัติ",
+        "ACTIONS": {
+          "CREATE": "สร้างคำขอลา"
+        },
+        "COLUMNS": {
+          "REFERENCE": "เลขที่อ้างอิง",
+          "TYPE": "ประเภท",
+          "START": "เริ่ม",
+          "END": "สิ้นสุด",
+          "STATUS": "สถานะ"
+        }
+      },
+      "CREATE": {
+        "TITLE": "บันทึกคำขอลา",
+        "SUBTITLE": "กรอกข้อมูลเพื่อยื่นลา",
+        "CONTENT_TITLE": "แบบฟอร์มคำขอลา",
+        "CONTENT_SUBTITLE": "ใส่รายละเอียดวันลาและเอกสาร",
+        "TODO": "TODO: พัฒนาแบบฟอร์มและการตรวจสอบข้อมูล",
+        "ACTIONS": {
+          "SUBMIT": "ส่งคำขอ",
+          "SAVE_DRAFT": "บันทึกร่าง"
+        }
+      },
+      "TEAM": {
+        "TITLE": "คำขอลาทีม",
+        "SUBTITLE": "ตรวจสอบและอนุมัติคำขอของทีม",
+        "CONTENT_TITLE": "คำขอรออนุมัติ",
+        "CONTENT_SUBTITLE": "รายการที่ผู้จัดการต้องดำเนินการ",
+        "TODO": "TODO: เชื่อมต่อขั้นตอนอนุมัติสำหรับผู้จัดการ",
+        "ACTIONS": {
+          "APPROVE_SELECTED": "อนุมัติที่เลือก",
+          "REJECT_SELECTED": "ปฏิเสธที่เลือก"
+        },
+        "COLUMNS": {
+          "EMPLOYEE": "พนักงาน",
+          "TYPE": "ประเภท",
+          "PERIOD": "ช่วงเวลา",
+          "STATUS": "สถานะ",
+          "REQUESTED_ON": "วันที่ยื่น"
+        }
+      },
+      "HISTORY": {
+        "TITLE": "ประวัติการลา",
+        "SUBTITLE": "ข้อมูลการลาที่ผ่านการอนุมัติแล้ว",
+        "CONTENT_TITLE": "บันทึกการลา",
+        "CONTENT_SUBTITLE": "สรุปคำขอที่อนุมัติและปฏิเสธ",
+        "TODO": "TODO: ดึงข้อมูลประวัติการลาพร้อมส่งออก"
+      }
+    },
+    "PAYROLL": {
+      "MY": {
+        "TITLE": "สลิปเงินเดือนของฉัน",
+        "SUBTITLE": "ดูองค์ประกอบรายได้และหักลด",
+        "CONTENT_TITLE": "รายละเอียดสลิปเงินเดือน",
+        "CONTENT_SUBTITLE": "รายได้ หักลด และยอดสุทธิ",
+        "TODO": "TODO: เชื่อมสลิปเงินเดือนและดาวน์โหลด",
+        "ACTIONS": {
+          "DOWNLOAD": "ดาวน์โหลด PDF"
+        },
+        "COLUMNS": {
+          "COMPONENT": "รายการ",
+          "AMOUNT": "จำนวนเงิน",
+          "NOTES": "หมายเหตุ"
+        }
+      },
+      "SUMMARY": {
+        "TITLE": "สรุปเงินเดือน",
+        "SUBTITLE": "ติดตามยอดรวมตามกลุ่ม",
+        "CONTENT_TITLE": "ภาพรวมเงินเดือน",
+        "CONTENT_SUBTITLE": "สรุปตามแผนกหรือกลุ่มการจ่าย",
+        "TODO": "TODO: เชื่อมข้อมูลสรุปและปุ่มส่งออก",
+        "ACTIONS": {
+          "GENERATE_REPORT": "สร้างรายงาน"
+        },
+        "COLUMNS": {
+          "DEPARTMENT": "แผนก",
+          "TOTAL_EMPLOYEES": "จำนวนพนักงาน",
+          "GROSS_PAY": "รายได้รวม",
+          "NET_PAY": "รายได้สุทธิ"
+        }
+      },
+      "GENERATE": {
+        "TITLE": "ประมวลผลสลิป",
+        "SUBTITLE": "กำหนดค่าการรันเงินเดือน",
+        "CONTENT_TITLE": "ตั้งค่าการประมวลผล",
+        "CONTENT_SUBTITLE": "เลือกช่วงการจ่าย กลุ่ม และตรวจสอบ",
+        "TODO": "TODO: เชื่อมเครื่องยนต์การคำนวณเงินเดือน",
+        "ACTIONS": {
+          "RUN_PAYROLL": "รันเงินเดือน",
+          "PREVIEW": "ดูตัวอย่าง"
+        },
+        "PAY_GROUPS": {
+          "MONTHLY": "รายเดือน",
+          "BI_WEEKLY": "รายปักษ์"
+        }
+      }
+    },
+    "PERFORMANCE": {
+      "MY": {
+        "TITLE": "ผลประเมินของฉัน",
+        "SUBTITLE": "ติดตามเป้าหมายและความคิดเห็น",
+        "CONTENT_TITLE": "ประวัติการประเมิน",
+        "CONTENT_SUBTITLE": "รายการที่เสร็จและรอดำเนินการ",
+        "TODO": "TODO: เชื่อมข้อมูลผลประเมินและไฟล์แนบ",
+        "ACTIONS": {
+          "DOWNLOAD": "ดาวน์โหลดรายงาน"
+        },
+        "COLUMNS": {
+          "REVIEW_CYCLE": "รอบประเมิน",
+          "SCORE": "คะแนน",
+          "MANAGER": "ผู้ประเมิน",
+          "STATUS": "สถานะ"
+        }
+      },
+      "TEAM": {
+        "TITLE": "ผลประเมินของทีม",
+        "SUBTITLE": "ทบทวนฟีดแบ็กจากผู้ใต้บังคับบัญชา",
+        "CONTENT_TITLE": "รายการทีม",
+        "CONTENT_SUBTITLE": "สิ่งที่ผู้จัดการต้องดำเนินการ",
+        "TODO": "TODO: เชื่อมกระบวนการอนุมัติผลประเมิน",
+        "ACTIONS": {
+          "APPROVE": "อนุมัติ",
+          "REQUEST_CHANGES": "ขอแก้ไข"
+        },
+        "COLUMNS": {
+          "EMPLOYEE": "พนักงาน",
+          "REVIEW_CYCLE": "รอบ",
+          "SCORE": "คะแนน",
+          "STATUS": "สถานะ"
+        }
+      },
+      "CREATE": {
+        "TITLE": "สร้างรอบประเมิน",
+        "SUBTITLE": "ตั้งค่ารอบการประเมินใหม่",
+        "CONTENT_TITLE": "การตั้งค่ารอบ",
+        "CONTENT_SUBTITLE": "เลือกแม่แบบ กำหนดผู้เข้าร่วม และกำหนดเวลา",
+        "TODO": "TODO: พัฒนาหน้าสร้างรอบประเมิน",
+        "ACTIONS": {
+          "SAVE": "บันทึกร่าง",
+          "PUBLISH": "เผยแพร่รอบ"
+        }
+      }
+    },
+    "TRAINING": {
+      "CATEGORIES": {
+        "ALL": "ทุกหมวด",
+        "TECHNICAL": "ทักษะเทคนิค",
+        "SOFT_SKILL": "ทักษะนุ่ม"
+      },
+      "CALENDAR": {
+        "TITLE": "ปฏิทินฝึกอบรม",
+        "SUBTITLE": "หลักสูตรที่กำลังจะมาถึง",
+        "CONTENT_TITLE": "ตารางฝึกอบรม",
+        "CONTENT_SUBTITLE": "มุมมองปฏิทินของกิจกรรม",
+        "TODO": "TODO: เชื่อมปฏิทินและปุ่มลงทะเบียน",
+        "ACTIONS": {
+          "SYNC_CALENDAR": "ซิงก์กับปฏิทิน"
+        },
+        "COLUMNS": {
+          "SESSION": "รอบ",
+          "DATE": "วันที่",
+          "TRAINER": "วิทยากร",
+          "STATUS": "สถานะ"
+        }
+      },
+      "PROGRESS": {
+        "TITLE": "ความคืบหน้าการฝึกอบรมของฉัน",
+        "SUBTITLE": "ติดตามหลักสูตรที่เข้าเรียน",
+        "CONTENT_TITLE": "ความคืบหน้า",
+        "CONTENT_SUBTITLE": "หลักสูตรที่กำลังเรียน",
+        "TODO": "TODO: เชื่อมสถานะการเรียนและใบประกาศ",
+        "ACTIONS": {
+          "VIEW_CERTIFICATES": "ดูใบประกาศ"
+        },
+        "COLUMNS": {
+          "PROGRAM": "หลักสูตร",
+          "START_DATE": "เริ่ม",
+          "END_DATE": "สิ้นสุด",
+          "STATUS": "สถานะ"
+        }
+      },
+      "REQUESTS": {
+        "TITLE": "คำขอฝึกอบรม",
+        "SUBTITLE": "ข้อเสนอหลักสูตรจากพนักงาน",
+        "CONTENT_TITLE": "รายการคำขอ",
+        "CONTENT_SUBTITLE": "รอการพิจารณา",
+        "TODO": "TODO: เชื่อมขั้นตอนอนุมัติคำขอฝึกอบรม",
+        "ACTIONS": {
+          "CREATE": "สร้างคำขอ"
+        },
+        "COLUMNS": {
+          "REQUESTED_BY": "ผู้ขอ",
+          "PROGRAM": "หลักสูตร",
+          "SUBMITTED_ON": "วันที่ส่ง",
+          "STATUS": "สถานะ"
+        }
+      },
+      "CREATE": {
+        "TITLE": "สร้างหลักสูตรฝึกอบรม",
+        "SUBTITLE": "เผยแพร่โครงการฝึกอบรมใหม่",
+        "CONTENT_TITLE": "เครื่องมือสร้างหลักสูตร",
+        "CONTENT_SUBTITLE": "กำหนดหัวข้อ วิทยากร และจำนวนที่นั่ง",
+        "TODO": "TODO: พัฒนาแบบฟอร์มสร้างหลักสูตรพร้อมตรวจสอบ",
+        "ACTIONS": {
+          "SAVE": "บันทึกหลักสูตร",
+          "PUBLISH": "เผยแพร่หลักสูตร"
+        },
+        "FIELDS": {
+          "TITLE": "ชื่อหลักสูตร",
+          "CATEGORY": "หมวดหมู่",
+          "START_DATE": "วันที่เริ่ม"
+        },
+        "PLACEHOLDER": {
+          "TITLE": "กรอกชื่อหลักสูตร"
+        }
+      }
+    },
+    "ENGAGEMENT": {
+      "SURVEYS": {
+        "TITLE": "แบบสำรวจความผูกพัน",
+        "SUBTITLE": "จัดการแบบสำรวจภายในองค์กร",
+        "CONTENT_TITLE": "รายการแบบสำรวจ",
+        "CONTENT_SUBTITLE": "สถานะปัจจุบันและที่กำลังจะถึง",
+        "TODO": "TODO: ผูกข้อมูลสถิติการตอบแบบสำรวจ",
+        "ACTIONS": {
+          "NEW_SURVEY": "สร้างแบบสำรวจ"
+        },
+        "COLUMNS": {
+          "TITLE": "ชื่อแบบสำรวจ",
+          "STATUS": "สถานะ",
+          "OPEN_DATE": "วันที่เปิด",
+          "CLOSE_DATE": "วันที่ปิด"
+        }
+      },
+      "RESULTS": {
+        "TITLE": "ผลแบบสำรวจ",
+        "SUBTITLE": "วิเคราะห์การมีส่วนร่วมและคะแนน",
+        "CONTENT_TITLE": "แดชบอร์ดผลลัพธ์",
+        "CONTENT_SUBTITLE": "ตัวชี้วัดสำคัญและแนวโน้ม",
+        "TODO": "TODO: เชื่อมกราฟวิเคราะห์และตัวกรอง",
+        "ACTIONS": {
+          "EXPORT": "ส่งออกผล",
+          "SHARE": "แชร์สรุป"
+        },
+        "OPTIONS": {
+          "LATEST": "แบบสำรวจล่าสุด",
+          "CUSTOM": "เลือกแบบสำรวจ"
+        },
+        "COLUMNS": {
+          "METRIC": "ตัวชี้วัด",
+          "SCORE": "คะแนน",
+          "TREND": "แนวโน้ม"
+        }
+      },
+      "CREATE": {
+        "TITLE": "สร้างแบบสำรวจ",
+        "SUBTITLE": "กำหนดคำถามและแผนการเผยแพร่",
+        "CONTENT_TITLE": "เครื่องมือสร้างแบบสำรวจ",
+        "CONTENT_SUBTITLE": "กำหนดหมวด คลังคำถาม และผู้เข้าร่วม",
+        "TODO": "TODO: พัฒนาตัวออกแบบแบบสำรวจ",
+        "ACTIONS": {
+          "SAVE_DRAFT": "บันทึกร่าง",
+          "PUBLISH": "เผยแพร่แบบสำรวจ"
+        },
+        "FIELDS": {
+          "TITLE": "ชื่อแบบสำรวจ",
+          "OPEN_DATE": "วันที่เปิด",
+          "CLOSE_DATE": "วันที่ปิด"
+        },
+        "PLACEHOLDER": {
+          "TITLE": "กรอกชื่อแบบสำรวจ"
+        }
+      }
+    },
+    "REPORTS": {
+      "ACTIONS": {
+        "RUN": "เรียกรายงาน"
+      },
+      "EMPLOYEE": {
+        "TITLE": "รายงานพนักงาน",
+        "SUBTITLE": "ดึงข้อมูลหลักของพนักงาน",
+        "CONTENT_TITLE": "ผลรายงานพนักงาน",
+        "CONTENT_SUBTITLE": "ข้อมูลตารางพร้อมส่งออก",
+        "TODO": "TODO: เชื่อมเครื่องมือรายงานพนักงาน",
+        "COLUMNS": {
+          "EMPLOYEE_ID": "รหัสพนักงาน",
+          "NAME": "ชื่อ",
+          "DEPARTMENT": "แผนก",
+          "STATUS": "สถานะ"
+        }
+      },
+      "LEAVE": {
+        "TITLE": "รายงานการลา",
+        "SUBTITLE": "สรุปการลาตามช่วงเวลา",
+        "CONTENT_TITLE": "ผลรายงานการลา",
+        "CONTENT_SUBTITLE": "จำนวนวันลาและสถานะ",
+        "TODO": "TODO: เชื่อมข้อมูลการลาเพื่อการวิเคราะห์",
+        "COLUMNS": {
+          "EMPLOYEE": "พนักงาน",
+          "TYPE": "ประเภทการลา",
+          "DAYS_USED": "จำนวนวัน",
+          "STATUS": "สถานะ"
+        }
+      },
+      "PAYROLL": {
+        "TITLE": "รายงานเงินเดือน",
+        "SUBTITLE": "รายงานสรุปเพื่อฝ่ายการเงิน",
+        "CONTENT_TITLE": "ผลรายงานเงินเดือน",
+        "CONTENT_SUBTITLE": "ยอดรวมตามกลุ่มการจ่าย",
+        "TODO": "TODO: เชื่อมข้อมูลสรุปเงินเดือน",
+        "COLUMNS": {
+          "PAY_GROUP": "กลุ่มการจ่าย",
+          "GROSS_PAY": "รายได้รวม",
+          "NET_PAY": "รายได้สุทธิ",
+          "STATUS": "สถานะ"
+        }
+      },
+      "PERFORMANCE": {
+        "TITLE": "รายงานผลประเมิน",
+        "SUBTITLE": "ติดตามคะแนนและแนวโน้ม",
+        "CONTENT_TITLE": "ผลรายงานผลประเมิน",
+        "CONTENT_SUBTITLE": "คะแนนเฉลี่ยและสถานะแต่ละหน่วย",
+        "TODO": "TODO: เชื่อมข้อมูลเชิงวิเคราะห์ผลประเมิน",
+        "COLUMNS": {
+          "DEPARTMENT": "แผนก",
+          "AVERAGE_SCORE": "คะแนนเฉลี่ย",
+          "TREND": "แนวโน้ม",
+          "STATUS": "สถานะ"
+        }
+      },
+      "EXPORT": {
+        "TITLE": "ส่งออกข้อมูล",
+        "SUBTITLE": "ดึงข้อมูลเพื่อระบบภายนอก",
+        "CONTENT_TITLE": "พื้นที่จัดการการส่งออก",
+        "CONTENT_SUBTITLE": "เลือกชุดข้อมูล รูปแบบ และตารางเวลา",
+        "TODO": "TODO: เชื่อมกระบวนการส่งออกข้อมูล",
+        "ACTIONS": {
+          "EXPORT_CSV": "ส่งออก CSV",
+          "EXPORT_XLSX": "ส่งออก XLSX",
+          "EXPORT_PDF": "ส่งออก PDF"
+        },
+        "FIELDS": {
+          "DATASET": "ชุดข้อมูล",
+          "FORMAT": "รูปแบบ"
+        },
+        "DATASETS": {
+          "EMPLOYEE": "ข้อมูลหลักพนักงาน",
+          "LEAVE": "บันทึกการลา",
+          "PAYROLL": "สรุปเงินเดือน"
+        },
+        "FORMATS": {
+          "CSV": "CSV",
+          "XLSX": "Excel (.xlsx)",
+          "PDF": "PDF"
+        }
+      }
+    },
+    "USERS": {
+      "LIST": {
+        "TITLE": "รายชื่อผู้ใช้",
+        "SUBTITLE": "จัดการสิทธิ์การเข้าใช้งาน",
+        "CONTENT_TITLE": "การจัดการผู้ใช้",
+        "CONTENT_SUBTITLE": "รายการบัญชีพร้อมบทบาท",
+        "TODO": "TODO: เชื่อมตารางผู้ใช้กับการกำหนดสิทธิ์",
+        "ACTIONS": {
+          "CREATE": "เพิ่มผู้ใช้",
+          "BULK_IMPORT": "นำเข้าแบบกลุ่ม"
+        },
+        "COLUMNS": {
+          "NAME": "ชื่อ",
+          "EMAIL": "อีเมล",
+          "ROLE": "บทบาท",
+          "STATUS": "สถานะ"
+        }
+      },
+      "CREATE": {
+        "TITLE": "เพิ่มผู้ใช้",
+        "SUBTITLE": "สร้างบัญชีผู้ใช้ใหม่",
+        "CONTENT_TITLE": "รายละเอียดผู้ใช้",
+        "CONTENT_SUBTITLE": "ข้อมูลพื้นฐานและบทบาท",
+        "TODO": "TODO: พัฒนาแบบฟอร์มสร้างบัญชีพร้อมตรวจสอบ",
+        "ACTIONS": {
+          "SAVE": "บันทึกผู้ใช้",
+          "SEND_INVITE": "ส่งคำเชิญ"
+        },
+        "FIELDS": {
+          "NAME": "ชื่อ-นามสกุล",
+          "EMAIL": "อีเมลองค์กร",
+          "ROLE": "บทบาท"
+        },
+        "PLACEHOLDER": {
+          "NAME": "กรอกชื่อ-นามสกุล",
+          "EMAIL": "name@example.com"
+        }
+      },
+      "ROLES": {
+        "TITLE": "บทบาทและสิทธิ์",
+        "SUBTITLE": "กำหนดสิทธิ์การเข้าถึง",
+        "CONTENT_TITLE": "รายการบทบาท",
+        "CONTENT_SUBTITLE": "รายละเอียดบทบาทและจำนวนผู้ใช้",
+        "TODO": "TODO: ผูกบทบาทกับเมทริกซ์สิทธิ์",
+        "ACTIONS": {
+          "ADD_ROLE": "เพิ่มบทบาท",
+          "MANAGE_PERMISSIONS": "จัดการสิทธิ์"
+        },
+        "COLUMNS": {
+          "ROLE": "บทบาท",
+          "DESCRIPTION": "คำอธิบาย",
+          "ASSIGNED_USERS": "ผู้ใช้ที่ได้รับมอบหมาย"
+        }
+      }
+    },
+    "SETTINGS": {
+      "PROFILE": {
+        "TITLE": "ตั้งค่าโปรไฟล์",
+        "SUBTITLE": "แก้ไขข้อมูลบัญชีผู้ใช้",
+        "CONTENT_TITLE": "ข้อมูลโปรไฟล์",
+        "CONTENT_SUBTITLE": "ข้อมูลติดต่อและการตั้งค่าพื้นฐาน",
+        "TODO": "TODO: เชื่อมแบบฟอร์มบันทึกโปรไฟล์",
+        "ACTIONS": {
+          "SAVE": "บันทึก"
+        },
+        "FIELDS": {
+          "FIRST_NAME": "ชื่อ",
+          "LAST_NAME": "นามสกุล",
+          "PHONE": "เบอร์โทร"
+        },
+        "PLACEHOLDER": {
+          "FIRST_NAME": "กรอกชื่อ",
+          "LAST_NAME": "กรอกนามสกุล",
+          "PHONE": "กรอกเบอร์โทร"
+        }
+      },
+      "NOTIFICATIONS": {
+        "TITLE": "การแจ้งเตือน",
+        "SUBTITLE": "กำหนดช่องทางและความถี่",
+        "CONTENT_TITLE": "การตั้งค่าการแจ้งเตือน",
+        "CONTENT_SUBTITLE": "เลือกรับแจ้งเตือนผ่านช่องทางต่าง ๆ",
+        "TODO": "TODO: บันทึกค่าการแจ้งเตือน",
+        "ACTIONS": {
+          "SAVE": "บันทึกการตั้งค่า"
+        },
+        "FIELDS": {
+          "CHANNEL": "ช่องทาง",
+          "FREQUENCY": "ความถี่"
+        },
+        "CHANNELS": {
+          "EMAIL": "อีเมล",
+          "SMS": "SMS",
+          "IN_APP": "ภายในระบบ"
+        },
+        "FREQUENCIES": {
+          "REALTIME": "แบบเรียลไทม์",
+          "DAILY": "รายวัน",
+          "WEEKLY": "รายสัปดาห์"
+        }
+      },
+      "SYSTEM": {
+        "TITLE": "ตั้งค่าระบบ",
+        "SUBTITLE": "กำหนดค่ามาตรฐานองค์กร",
+        "CONTENT_TITLE": "ค่าพื้นฐานของระบบ",
+        "CONTENT_SUBTITLE": "โซนเวลา วันทำงาน และการแปลภาษา",
+        "TODO": "TODO: เชื่อมการบันทึกค่าระบบ",
+        "ACTIONS": {
+          "SAVE": "บันทึกการตั้งค่า",
+          "RESET_DEFAULT": "กลับค่าเริ่มต้น"
+        },
+        "FIELDS": {
+          "TIMEZONE": "โซนเวลา",
+          "WORKWEEK": "วันทำงาน"
+        },
+        "TIMEZONES": {
+          "BKK": "(UTC+07:00) กรุงเทพมหานคร",
+          "UTC": "(UTC) เวลาสากล"
+        },
+        "WORKWEEKS": {
+          "STANDARD": "จันทร์-ศุกร์",
+          "CUSTOM": "กำหนดเอง"
+        }
+      },
+      "SECURITY": {
+        "TITLE": "การตั้งค่าความปลอดภัย",
+        "SUBTITLE": "นโยบายการยืนยันตัวตนและรหัสผ่าน",
+        "CONTENT_TITLE": "มาตรการความปลอดภัย",
+        "CONTENT_SUBTITLE": "MFA นโยบายรหัสผ่าน และการบังคับใช้",
+        "TODO": "TODO: เชื่อมมาตรการบังคับใช้นโยบาย",
+        "ACTIONS": {
+          "SAVE": "บันทึกการตั้งค่า",
+          "ENFORCE": "ยืนยันการบังคับใช้"
+        },
+        "FIELDS": {
+          "MFA": "การยืนยันหลายปัจจัย",
+          "PASSWORD_POLICY": "นโยบายรหัสผ่าน"
+        },
+        "MFA": {
+          "REQUIRED": "บังคับ",
+          "OPTIONAL": "เลือกได้"
+        },
+        "PASSWORD_POLICY": {
+          "STANDARD": "มาตรฐาน",
+          "STRICT": "เข้มงวด"
+        }
+      }
+    }
+  }
+}

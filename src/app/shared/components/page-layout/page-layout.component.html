@@ -1,0 +1,235 @@
+<section class="page-container">
+  <div class="card card-padding">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+      <div>
+        <h1 class="text-xl font-semibold text-gray-900">{{ pageTitleKey | translate }}</h1>
+        <p *ngIf="pageSubtitleKey" class="text-sm text-gray-500 mt-1">
+          {{ pageSubtitleKey | translate }}
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-2 justify-end">
+        <button
+          *ngFor="let action of actions; trackBy: trackByKey"
+          type="button"
+          [ngClass]="getActionClasses(action)"
+        >
+          <span *ngIf="action.icon" class="material-icons text-[18px]">{{ action.icon }}</span>
+          <span>{{ action.labelKey | translate }}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-padding">
+    <div class="flex items-center justify-between mb-4">
+      <h2 class="text-sm font-semibold text-gray-900">{{ 'COMMON.SECTIONS.FILTERS' | translate }}</h2>
+      <button
+        *ngIf="showResetFilterButton"
+        type="button"
+        class="inline-flex items-center gap-2 text-xs font-medium text-gray-600 hover:text-blue-600 focus:outline-none"
+        (click)="refresh()"
+      >
+        <span class="material-icons text-[18px]">refresh</span>
+        {{ 'COMMON.ACTIONS.RESET_FILTERS' | translate }}
+      </button>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="space-y-4">
+      <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        <label
+          *ngFor="let field of filterFields; let i = index; trackBy: trackByKey"
+          class="flex flex-col gap-1 text-xs font-medium text-gray-600"
+        >
+          <span>{{ field.labelKey | translate }}</span>
+          <ng-container [ngSwitch]="field.type">
+            <input
+              *ngSwitchCase="'text'"
+              type="text"
+              class="rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              [placeholder]="field.placeholderKey ? (field.placeholderKey | translate) : ''"
+              [formControlName]="controlNameAt(i)"
+            />
+            <input
+              *ngSwitchCase="'date'"
+              type="date"
+              class="rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              [formControlName]="controlNameAt(i)"
+            />
+            <select
+              *ngSwitchDefault
+              class="rounded-md border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 bg-white"
+              [formControlName]="controlNameAt(i)"
+            >
+              <option value="">{{ 'COMMON.SELECT.PLACEHOLDER' | translate }}</option>
+              <ng-container *ngIf="field.options?.length; else optionKeyList">
+                <option
+                  *ngFor="let option of field.options; trackBy: optionTrack"
+                  [value]="option.value"
+                >
+                  {{ option.labelKey ? (option.labelKey | translate) : option.value }}
+                </option>
+              </ng-container>
+              <ng-template #optionKeyList>
+                <option
+                  *ngFor="let option of field.optionKeys || []; trackBy: trackByKey"
+                  [value]="option"
+                >
+                  {{ option | translate }}
+                </option>
+              </ng-template>
+            </select>
+          </ng-container>
+        </label>
+      </div>
+      <div class="flex justify-end gap-2">
+        <button
+          type="submit"
+          class="inline-flex items-center gap-2 rounded-md bg-blue-600 px-3 py-2 text-xs font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <span class="material-icons text-[18px]">tune</span>
+          {{ 'COMMON.ACTIONS.APPLY_FILTERS' | translate }}
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div class="card card-padding">
+    <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-4">
+      <div>
+        <h2 class="text-sm font-semibold text-gray-900">{{ contentTitleKey | translate }}</h2>
+        <p *ngIf="contentSubtitleKey" class="text-xs text-gray-500 mt-1">
+          {{ contentSubtitleKey | translate }}
+        </p>
+      </div>
+      <div class="flex flex-wrap items-center justify-end gap-2">
+        <span
+          *ngIf="!loading()"
+          class="inline-flex items-center rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-600"
+          data-testid="total-count-badge"
+        >
+          {{ 'COMMON.TABLE.TOTAL_RECORDS' | translate:{ count: totalCount() } }}
+        </span>
+        <button
+          *ngIf="showExportButton"
+          type="button"
+          class="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          <span class="material-icons text-[18px]">file_download</span>
+          {{ exportLabelKey | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div
+      *ngIf="backendNoteKey() && !loading()"
+      class="mb-4 rounded-md border border-blue-200 bg-blue-50 px-4 py-3 text-xs text-blue-700"
+      data-testid="backend-note"
+    >
+      {{ backendNoteKey() | translate }}
+    </div>
+
+    <div class="relative min-h-[120px]">
+      <div *ngIf="loading()" class="flex items-center justify-center py-8">
+        <span class="h-8 w-8 border-4 border-blue-200 border-t-blue-600 rounded-full animate-spin"></span>
+      </div>
+
+      <div
+        *ngIf="!loading() && errorKey()"
+        class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700"
+      >
+        {{ errorKey() | translate }}
+      </div>
+
+      <ng-container *ngIf="!loading() && !errorKey()">
+        <div *ngIf="hasTableData(); else emptyState" class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-gray-200">
+            <thead class="bg-gray-50">
+              <tr>
+                <th
+                  *ngFor="let header of headerKeys(); trackBy: trackByKey"
+                  scope="col"
+                  class="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  {{ header | translate }}
+                </th>
+                <th
+                  *ngIf="hasRowActions()"
+                  class="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  {{ 'COMMON.TABLE.ACTIONS' | translate }}
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 bg-white">
+              <tr *ngFor="let row of tableRows(); trackBy: trackRow">
+                <td
+                  *ngFor="let header of headerKeys(); trackBy: trackColumn"
+                  class="px-4 py-3 text-sm text-gray-700"
+                >
+                  {{ getCellValue(row, header) }}
+                </td>
+                <td *ngIf="hasRowActions()" class="px-4 py-3 text-sm text-gray-500">
+                  <button
+                    *ngFor="let action of row.actions || []"
+                    type="button"
+                    class="inline-flex items-center gap-1 rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-600 hover:border-blue-300 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  >
+                    <span class="material-icons text-[16px]">{{ action.icon }}</span>
+                    {{ action.labelKey | translate }}
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <ng-template #emptyState>
+          <div class="border border-dashed border-gray-300 rounded-md p-6 text-center text-sm text-gray-500">
+            {{ emptyMessageKey() | translate }}
+          </div>
+        </ng-template>
+      </ng-container>
+    </div>
+    <div
+      *ngIf="!loading() && totalCount() > 0"
+      class="mt-4 flex flex-col gap-3 md:flex-row md:items-center md:justify-between"
+    >
+      <div class="text-xs text-gray-500">
+        {{ 'COMMON.PAGINATION.RANGE' | translate:{ start: startIndex(), end: endIndex(), total: totalCount() } }}
+      </div>
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <label class="flex items-center gap-2 text-xs text-gray-600">
+          {{ 'COMMON.PAGINATION.PAGE_SIZE' | translate }}
+          <select
+            class="rounded-md border border-gray-300 bg-white px-2 py-1 text-xs focus:border-blue-500 focus:ring-blue-500"
+            [value]="pageSize()"
+            (change)="onPageSizeChange($event)"
+          >
+            <option *ngFor="let size of pageSizeOptions()" [value]="size">{{ size }}</option>
+          </select>
+        </label>
+        <div class="flex items-center gap-2">
+          <button
+            type="button"
+            class="inline-flex items-center gap-1 rounded-md border border-gray-300 px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+            (click)="goToPreviousPage()"
+            [disabled]="pageNumber() <= 1"
+          >
+            <span class="material-icons text-[16px]">chevron_left</span>
+            {{ 'COMMON.PAGINATION.PREV' | translate }}
+          </button>
+          <span class="text-xs text-gray-500">
+            {{ pageNumber() }} / {{ totalPages() }}
+          </span>
+          <button
+            type="button"
+            class="inline-flex items-center gap-1 rounded-md border border-gray-300 px-2 py-1 text-xs font-medium text-gray-600 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:cursor-not-allowed disabled:opacity-50"
+            (click)="goToNextPage()"
+            [disabled]="pageNumber() >= totalPages()"
+          >
+            {{ 'COMMON.PAGINATION.NEXT' | translate }}
+            <span class="material-icons text-[16px]">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

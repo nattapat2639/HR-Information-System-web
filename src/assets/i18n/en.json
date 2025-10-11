@@ -1,0 +1,764 @@
+{
+  "APP": {
+    "TITLE": "HR Information System",
+    "SUBTITLE": "Unified workforce management",
+    "SIDEBAR_TAGLINE": "Manage people, payroll, and insights",
+    "LANGUAGE": {
+      "EN": "English",
+      "TH": "Thai"
+    },
+    "USER": {
+      "NAME": "Alex Morgan",
+      "ROLE": "System Administrator"
+    }
+  },
+  "COMMON": {
+    "SECTIONS": {
+      "FILTERS": "Filters"
+    },
+    "ACTIONS": {
+      "RESET_FILTERS": "Reset filters",
+      "EXPORT": "Export",
+      "APPLY_FILTERS": "Apply filters"
+    },
+    "SELECT": {
+      "PLACEHOLDER": "Please select"
+    },
+    "TABLE": {
+      "ACTIONS": "Actions",
+      "TOTAL_RECORDS": "Total: {{count}} records",
+      "NO_DATA": "No records available yet"
+    },
+    "PAGINATION": {
+      "PAGE_SIZE": "Rows per page",
+      "RANGE": "Showing {{start}}-{{end}} of {{total}}",
+      "PREV": "Previous",
+      "NEXT": "Next"
+    },
+    "FIELDS": {
+      "PERIOD": "Period",
+      "PAY_PERIOD": "Pay period",
+      "PAY_GROUP": "Pay group",
+      "NAME": "Name",
+      "DEPARTMENT": "Department",
+      "STATUS": "Status",
+      "EMPLOYEE_ID": "Employee ID",
+      "KEYWORD": "Keyword",
+      "LOCATION": "Location",
+      "DATE_RANGE": "Date range",
+      "SURVEY": "Survey",
+      "YEAR": "Year",
+      "LEAVE_TYPE": "Leave type",
+      "START_DATE": "Start date",
+      "END_DATE": "End date",
+      "EMPLOYEE": "Employee",
+      "MONTH": "Month",
+      "CATEGORY": "Category",
+      "ROLE": "Role",
+      "PHONE": "Phone number",
+      "TEMPLATE": "Template"
+    },
+    "PLACEHOLDER": {
+      "SEARCH_NAME": "Search by name",
+      "ENTER_KEYWORD": "Enter keyword"
+    },
+    "SELECT_OPTIONS": {
+      "NONE": "--"
+    },
+    "ERROR": {
+      "LOAD_FAILED": "Unable to load data. Please try again."
+    },
+    "STATUSES": {
+      "ALL": "All statuses",
+      "ACTIVE": "Active",
+      "INACTIVE": "Inactive",
+      "ONBOARDING": "Onboarding",
+      "PENDING": "Pending",
+      "APPROVED": "Approved",
+      "REJECTED": "Rejected",
+      "COMPLETED": "Completed",
+      "IN_PROGRESS": "In progress",
+      "SUBMITTED": "Submitted",
+      "SUSPENDED": "Suspended",
+      "CLOSED": "Closed"
+    },
+    "DEPARTMENTS": {
+      "ALL": "All departments",
+      "HR": "Human Resources",
+      "IT": "Technology",
+      "FINANCE": "Finance"
+    },
+    "LOCATIONS": {
+      "ALL": "All locations",
+      "HQ": "Headquarters",
+      "REGIONAL": "Regional offices"
+    },
+    "PERIODS": {
+      "THIS_MONTH": "This month",
+      "LAST_MONTH": "Last month",
+      "THIS_QUARTER": "This quarter",
+      "CURRENT_MONTH": "Current month",
+      "CURRENT_QUARTER": "Current quarter",
+      "LAST_QUARTER": "Last quarter",
+      "CURRENT_YEAR": "Current year",
+      "LAST_YEAR": "Last year",
+      "NEXT_YEAR": "Next year",
+      "CUSTOM": "Custom range"
+    },
+    "YEARS": {
+      "CURRENT": "Current year",
+      "LAST": "Last year"
+    },
+    "MONTHS": {
+      "CURRENT": "Current month",
+      "NEXT": "Next month"
+    },
+    "ROLES": {
+      "ALL": "All roles",
+      "USER": "Employee",
+      "MANAGER": "Manager",
+      "ADMIN": "Administrator"
+    }
+  },
+  "SIDEBAR": {
+    "DASHBOARD": "Dashboard",
+    "EMPLOYEE_RECORDS": {
+      "TITLE": "Employee Records",
+      "ALL": "All employees",
+      "PROFILE": "Employee profile",
+      "SEARCH": "Search employee"
+    },
+    "LEAVE_MANAGEMENT": {
+      "TITLE": "Leave Management",
+      "MY_REQUESTS": "My leave requests",
+      "CREATE_REQUEST": "Create leave request",
+      "TEAM_REQUESTS": "Team leave approvals",
+      "HISTORY": "Leave history"
+    },
+    "PAYROLL": {
+      "TITLE": "Payroll",
+      "MY_PAYSLIP": "My payslip",
+      "SUMMARY": "Payroll summary",
+      "GENERATE": "Generate payslips"
+    },
+    "PERFORMANCE": {
+      "TITLE": "Performance",
+      "MY_REVIEWS": "My performance",
+      "TEAM_REVIEWS": "Team reviews",
+      "CREATE": "Create review"
+    },
+    "TRAINING": {
+      "TITLE": "Training & Development",
+      "CALENDAR": "Training calendar",
+      "PROGRESS": "My training progress",
+      "REQUESTS": "Training requests",
+      "CREATE_PROGRAM": "Create program"
+    },
+    "ENGAGEMENT": {
+      "TITLE": "Employee Engagement",
+      "SURVEYS": "Engagement surveys",
+      "RESULTS": "Survey results",
+      "CREATE": "Create survey"
+    },
+    "REPORTS": {
+      "TITLE": "Reports",
+      "EMPLOYEE": "Employee report",
+      "LEAVE": "Leave report",
+      "PAYROLL": "Payroll report",
+      "PERFORMANCE": "Performance report",
+      "EXPORT": "Export data"
+    },
+    "USER_MANAGEMENT": {
+      "TITLE": "User Management",
+      "LIST": "Users list",
+      "CREATE": "Create user",
+      "ROLES": "Roles & permissions"
+    },
+    "SETTINGS": {
+      "TITLE": "Settings",
+      "PROFILE": "Profile",
+      "NOTIFICATIONS": "Notifications",
+      "SYSTEM": "System config",
+      "SECURITY": "Security settings"
+    }
+  },
+  "PAGES": {
+    "DASHBOARD": {
+      "TITLE": "Dashboard overview",
+      "SUBTITLE": "Track requests, approvals, and announcements",
+      "CONTENT_TITLE": "Key widgets",
+      "CONTENT_SUBTITLE": "Status cards and actionable metrics",
+      "TODO": "TODO: Bind dashboard widgets and action shortcuts",
+      "ACTIONS": {
+        "CREATE_REQUEST": "Create request",
+        "APPROVALS": "Go to approvals"
+      }
+    },
+    "EMPLOYEE_RECORDS": {
+      "LIST": {
+        "TITLE": "All employees",
+        "SUBTITLE": "Browse and manage employee master data",
+        "CONTENT_TITLE": "Employee directory",
+        "CONTENT_SUBTITLE": "Filter by department, job level, or status",
+        "TODO": "TODO: Load employees from API and enable inline actions",
+        "ACTIONS": {
+          "ADD": "Add employee"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "Employee ID",
+          "NAME": "Name",
+          "POSITION": "Position",
+          "DEPARTMENT": "Department",
+          "STATUS": "Status"
+        }
+      },
+      "PROFILE": {
+        "TITLE": "Employee profile",
+        "SUBTITLE": "Maintain personal and employment information",
+        "CONTENT_TITLE": "Profile summary",
+        "CONTENT_SUBTITLE": "Personal info, work details, attachments",
+        "TODO": "TODO: Render profile tabs and editable sections",
+        "ACTIONS": {
+          "EDIT": "Edit profile",
+          "DOWNLOAD": "Download profile",
+          "MORE": "More actions"
+        },
+        "PLACEHOLDER": {
+          "EMPLOYEE_ID": "Search by employee number"
+        }
+      },
+      "SEARCH": {
+        "TITLE": "Search employee",
+        "SUBTITLE": "Run advanced criteria across the workforce",
+        "CONTENT_TITLE": "Search results",
+        "CONTENT_SUBTITLE": "Matching employees",
+        "TODO": "TODO: Connect advanced search filters and export",
+        "ACTIONS": {
+          "SAVE_FILTER": "Save filter"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "Employee ID",
+          "NAME": "Name",
+          "DEPARTMENT": "Department",
+          "LEVEL": "Level"
+        }
+      }
+    },
+    "LEAVE": {
+      "OPTIONS": {
+        "ALL_TYPES": "All leave types",
+        "ANNUAL": "Annual leave",
+        "SICK": "Sick leave",
+        "UNPAID": "Unpaid leave"
+      },
+      "MY": {
+        "TITLE": "My leave requests",
+        "SUBTITLE": "Submit and track personal leave",
+        "CONTENT_TITLE": "Requests overview",
+        "CONTENT_SUBTITLE": "Latest submissions and statuses",
+        "TODO": "TODO: Bind leave requests list with workflow actions",
+        "ACTIONS": {
+          "CREATE": "New leave request"
+        },
+        "COLUMNS": {
+          "REFERENCE": "Reference",
+          "TYPE": "Type",
+          "START": "Start",
+          "END": "End",
+          "STATUS": "Status"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Create leave request",
+        "SUBTITLE": "File a new leave application",
+        "CONTENT_TITLE": "Request form",
+        "CONTENT_SUBTITLE": "Fill in leave details and attachments",
+        "TODO": "TODO: Implement leave request form with validation",
+        "ACTIONS": {
+          "SUBMIT": "Submit request",
+          "SAVE_DRAFT": "Save draft"
+        }
+      },
+      "TEAM": {
+        "TITLE": "Team leave requests",
+        "SUBTITLE": "Review and approve team submissions",
+        "CONTENT_TITLE": "Pending approvals",
+        "CONTENT_SUBTITLE": "Awaiting manager action",
+        "TODO": "TODO: Connect manager approval workflow",
+        "ACTIONS": {
+          "APPROVE_SELECTED": "Approve selected",
+          "REJECT_SELECTED": "Reject selected"
+        },
+        "COLUMNS": {
+          "EMPLOYEE": "Employee",
+          "TYPE": "Type",
+          "PERIOD": "Period",
+          "STATUS": "Status",
+          "REQUESTED_ON": "Requested on"
+        }
+      },
+      "HISTORY": {
+        "TITLE": "Leave history",
+        "SUBTITLE": "Past approved and rejected requests",
+        "CONTENT_TITLE": "Historical leave records",
+        "CONTENT_SUBTITLE": "Archive of processed leave",
+        "TODO": "TODO: Load historical leave data with export"
+      }
+    },
+    "PAYROLL": {
+      "MY": {
+        "TITLE": "My payslip",
+        "SUBTITLE": "Review salary components and deductions",
+        "CONTENT_TITLE": "Payslip details",
+        "CONTENT_SUBTITLE": "Earnings, deductions, and net pay",
+        "TODO": "TODO: Retrieve payslip data and enable downloads",
+        "ACTIONS": {
+          "DOWNLOAD": "Download PDF"
+        },
+        "COLUMNS": {
+          "COMPONENT": "Component",
+          "AMOUNT": "Amount",
+          "NOTES": "Notes"
+        }
+      },
+      "SUMMARY": {
+        "TITLE": "Payroll summary",
+        "SUBTITLE": "Monitor payroll totals by group",
+        "CONTENT_TITLE": "Payroll overview",
+        "CONTENT_SUBTITLE": "Department or group level totals",
+        "TODO": "TODO: Connect summary API and export",
+        "ACTIONS": {
+          "GENERATE_REPORT": "Generate report"
+        },
+        "COLUMNS": {
+          "DEPARTMENT": "Department",
+          "TOTAL_EMPLOYEES": "Employees",
+          "GROSS_PAY": "Gross pay",
+          "NET_PAY": "Net pay"
+        }
+      },
+      "GENERATE": {
+        "TITLE": "Generate payslips",
+        "SUBTITLE": "Configure and trigger payroll runs",
+        "CONTENT_TITLE": "Payroll run configuration",
+        "CONTENT_SUBTITLE": "Select pay period, group, and validations",
+        "TODO": "TODO: Hook up payroll engine trigger",
+        "ACTIONS": {
+          "RUN_PAYROLL": "Run payroll",
+          "PREVIEW": "Preview run"
+        },
+        "PAY_GROUPS": {
+          "MONTHLY": "Monthly",
+          "BI_WEEKLY": "Bi-weekly"
+        }
+      }
+    },
+    "PERFORMANCE": {
+      "MY": {
+        "TITLE": "My performance reviews",
+        "SUBTITLE": "Track feedback and goals",
+        "CONTENT_TITLE": "Review history",
+        "CONTENT_SUBTITLE": "Completed and pending reviews",
+        "TODO": "TODO: Bind employee review data and documents",
+        "ACTIONS": {
+          "DOWNLOAD": "Download report"
+        },
+        "COLUMNS": {
+          "REVIEW_CYCLE": "Review cycle",
+          "SCORE": "Score",
+          "MANAGER": "Manager",
+          "STATUS": "Status"
+        }
+      },
+      "TEAM": {
+        "TITLE": "Team performance reviews",
+        "SUBTITLE": "Review submissions from direct reports",
+        "CONTENT_TITLE": "Team reviews",
+        "CONTENT_SUBTITLE": "Actions required from manager",
+        "TODO": "TODO: Connect team review approval flow",
+        "ACTIONS": {
+          "APPROVE": "Approve review",
+          "REQUEST_CHANGES": "Request changes"
+        },
+        "COLUMNS": {
+          "EMPLOYEE": "Employee",
+          "REVIEW_CYCLE": "Review cycle",
+          "SCORE": "Score",
+          "STATUS": "Status"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Create performance review",
+        "SUBTITLE": "Launch a new evaluation cycle",
+        "CONTENT_TITLE": "Review configuration",
+        "CONTENT_SUBTITLE": "Define template, participants, and timeline",
+        "TODO": "TODO: Build review creation workflow",
+        "ACTIONS": {
+          "SAVE": "Save draft",
+          "PUBLISH": "Publish cycle"
+        }
+      }
+    },
+    "TRAINING": {
+      "CATEGORIES": {
+        "ALL": "All categories",
+        "TECHNICAL": "Technical",
+        "SOFT_SKILL": "Soft skills"
+      },
+      "CALENDAR": {
+        "TITLE": "Training calendar",
+        "SUBTITLE": "Upcoming programs and sessions",
+        "CONTENT_TITLE": "Scheduled trainings",
+        "CONTENT_SUBTITLE": "Calendar view of upcoming events",
+        "TODO": "TODO: Integrate calendar view and registration actions",
+        "ACTIONS": {
+          "SYNC_CALENDAR": "Sync to calendar"
+        },
+        "COLUMNS": {
+          "SESSION": "Session",
+          "DATE": "Date",
+          "TRAINER": "Trainer",
+          "STATUS": "Status"
+        }
+      },
+      "PROGRESS": {
+        "TITLE": "My training progress",
+        "SUBTITLE": "Track completion and certifications",
+        "CONTENT_TITLE": "Progress overview",
+        "CONTENT_SUBTITLE": "Programs I am enrolled in",
+        "TODO": "TODO: Bind learner progress with certificate download",
+        "ACTIONS": {
+          "VIEW_CERTIFICATES": "View certificates"
+        },
+        "COLUMNS": {
+          "PROGRAM": "Program",
+          "START_DATE": "Start date",
+          "END_DATE": "End date",
+          "STATUS": "Status"
+        }
+      },
+      "REQUESTS": {
+        "TITLE": "Training requests",
+        "SUBTITLE": "Proposed courses from employees",
+        "CONTENT_TITLE": "Submitted requests",
+        "CONTENT_SUBTITLE": "Pending review or approval",
+        "TODO": "TODO: Link training request workflow and approvals",
+        "ACTIONS": {
+          "CREATE": "New training request"
+        },
+        "COLUMNS": {
+          "REQUESTED_BY": "Requested by",
+          "PROGRAM": "Program",
+          "SUBMITTED_ON": "Submitted on",
+          "STATUS": "Status"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Create training program",
+        "SUBTITLE": "Publish a new learning opportunity",
+        "CONTENT_TITLE": "Program builder",
+        "CONTENT_SUBTITLE": "Define agenda, trainer, and capacity",
+        "TODO": "TODO: Implement training creation form and validation",
+        "ACTIONS": {
+          "SAVE": "Save program",
+          "PUBLISH": "Publish program"
+        },
+        "FIELDS": {
+          "TITLE": "Program title",
+          "CATEGORY": "Category",
+          "START_DATE": "Start date"
+        },
+        "PLACEHOLDER": {
+          "TITLE": "Enter program title"
+        }
+      }
+    },
+    "ENGAGEMENT": {
+      "SURVEYS": {
+        "TITLE": "Engagement surveys",
+        "SUBTITLE": "Launch or manage workplace surveys",
+        "CONTENT_TITLE": "Survey catalogue",
+        "CONTENT_SUBTITLE": "Active, scheduled, and archived surveys",
+        "TODO": "TODO: Connect survey list with participation stats",
+        "ACTIONS": {
+          "NEW_SURVEY": "New survey"
+        },
+        "COLUMNS": {
+          "TITLE": "Survey title",
+          "STATUS": "Status",
+          "OPEN_DATE": "Open date",
+          "CLOSE_DATE": "Close date"
+        }
+      },
+      "RESULTS": {
+        "TITLE": "Survey results",
+        "SUBTITLE": "Analyse participation and sentiment",
+        "CONTENT_TITLE": "Insights dashboard",
+        "CONTENT_SUBTITLE": "Key metrics and trend analysis",
+        "TODO": "TODO: Integrate analytics charts and filters",
+        "ACTIONS": {
+          "EXPORT": "Export results",
+          "SHARE": "Share summary"
+        },
+        "OPTIONS": {
+          "LATEST": "Latest survey",
+          "CUSTOM": "Choose survey"
+        },
+        "COLUMNS": {
+          "METRIC": "Metric",
+          "SCORE": "Score",
+          "TREND": "Trend"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Create survey",
+        "SUBTITLE": "Draft questions and rollout plan",
+        "CONTENT_TITLE": "Survey designer",
+        "CONTENT_SUBTITLE": "Configure sections, audience, and notifications",
+        "TODO": "TODO: Build survey designer with question builder",
+        "ACTIONS": {
+          "SAVE_DRAFT": "Save draft",
+          "PUBLISH": "Publish survey"
+        },
+        "FIELDS": {
+          "TITLE": "Survey title",
+          "OPEN_DATE": "Open date",
+          "CLOSE_DATE": "Close date"
+        },
+        "PLACEHOLDER": {
+          "TITLE": "Enter survey title"
+        }
+      }
+    },
+    "REPORTS": {
+      "ACTIONS": {
+        "RUN": "Run report"
+      },
+      "EMPLOYEE": {
+        "TITLE": "Employee report",
+        "SUBTITLE": "Generate workforce master data extracts",
+        "CONTENT_TITLE": "Employee report output",
+        "CONTENT_SUBTITLE": "Tabular results ready for export",
+        "TODO": "TODO: Connect reporting engine for employee data",
+        "COLUMNS": {
+          "EMPLOYEE_ID": "Employee ID",
+          "NAME": "Name",
+          "DEPARTMENT": "Department",
+          "STATUS": "Status"
+        }
+      },
+      "LEAVE": {
+        "TITLE": "Leave report",
+        "SUBTITLE": "Summarise leave utilisation by period",
+        "CONTENT_TITLE": "Leave report output",
+        "CONTENT_SUBTITLE": "Requested and approved day counts",
+        "TODO": "TODO: Provide leave utilisation metrics",
+        "COLUMNS": {
+          "EMPLOYEE": "Employee",
+          "TYPE": "Leave type",
+          "DAYS_USED": "Days used",
+          "STATUS": "Status"
+        }
+      },
+      "PAYROLL": {
+        "TITLE": "Payroll report",
+        "SUBTITLE": "Summaries for finance reconciliation",
+        "CONTENT_TITLE": "Payroll report output",
+        "CONTENT_SUBTITLE": "Totals per pay group",
+        "TODO": "TODO: Expose payroll summary dataset",
+        "COLUMNS": {
+          "PAY_GROUP": "Pay group",
+          "GROSS_PAY": "Gross pay",
+          "NET_PAY": "Net pay",
+          "STATUS": "Status"
+        }
+      },
+      "PERFORMANCE": {
+        "TITLE": "Performance report",
+        "SUBTITLE": "Track evaluation outcomes and trends",
+        "CONTENT_TITLE": "Performance report output",
+        "CONTENT_SUBTITLE": "Average scores and status by unit",
+        "TODO": "TODO: Pull performance analytics data",
+        "COLUMNS": {
+          "DEPARTMENT": "Department",
+          "AVERAGE_SCORE": "Average score",
+          "TREND": "Trend",
+          "STATUS": "Status"
+        }
+      },
+      "EXPORT": {
+        "TITLE": "Export data",
+        "SUBTITLE": "Bulk data extraction for downstream systems",
+        "CONTENT_TITLE": "Export workspace",
+        "CONTENT_SUBTITLE": "Select dataset, format, and schedule",
+        "TODO": "TODO: Wire up export job orchestration",
+        "ACTIONS": {
+          "EXPORT_CSV": "Export CSV",
+          "EXPORT_XLSX": "Export XLSX",
+          "EXPORT_PDF": "Export PDF"
+        },
+        "FIELDS": {
+          "DATASET": "Dataset",
+          "FORMAT": "Format"
+        },
+        "DATASETS": {
+          "EMPLOYEE": "Employee master",
+          "LEAVE": "Leave transactions",
+          "PAYROLL": "Payroll summary"
+        },
+        "FORMATS": {
+          "CSV": "CSV",
+          "XLSX": "Excel (.xlsx)",
+          "PDF": "PDF"
+        }
+      }
+    },
+    "USERS": {
+      "LIST": {
+        "TITLE": "Users list",
+        "SUBTITLE": "Administer account access and status",
+        "CONTENT_TITLE": "User management",
+        "CONTENT_SUBTITLE": "Accounts with roles and status",
+        "TODO": "TODO: Bind user list with role management actions",
+        "ACTIONS": {
+          "CREATE": "Create user",
+          "BULK_IMPORT": "Bulk import"
+        },
+        "COLUMNS": {
+          "NAME": "Name",
+          "EMAIL": "Email",
+          "ROLE": "Role",
+          "STATUS": "Status"
+        }
+      },
+      "CREATE": {
+        "TITLE": "Create user",
+        "SUBTITLE": "Provision new user access",
+        "CONTENT_TITLE": "User details",
+        "CONTENT_SUBTITLE": "Basic information and role assignment",
+        "TODO": "TODO: Implement user creation form and validations",
+        "ACTIONS": {
+          "SAVE": "Save user",
+          "SEND_INVITE": "Send invite"
+        },
+        "FIELDS": {
+          "NAME": "Full name",
+          "EMAIL": "Work email",
+          "ROLE": "Role"
+        },
+        "PLACEHOLDER": {
+          "NAME": "Enter full name",
+          "EMAIL": "name@example.com"
+        }
+      },
+      "ROLES": {
+        "TITLE": "Roles & permissions",
+        "SUBTITLE": "Define access policies and scope",
+        "CONTENT_TITLE": "Role directory",
+        "CONTENT_SUBTITLE": "Role descriptions and assigned users",
+        "TODO": "TODO: Link role definitions with permission matrix",
+        "ACTIONS": {
+          "ADD_ROLE": "Add role",
+          "MANAGE_PERMISSIONS": "Manage permissions"
+        },
+        "COLUMNS": {
+          "ROLE": "Role",
+          "DESCRIPTION": "Description",
+          "ASSIGNED_USERS": "Assigned users"
+        }
+      }
+    },
+    "SETTINGS": {
+      "PROFILE": {
+        "TITLE": "Profile settings",
+        "SUBTITLE": "Manage personal account details",
+        "CONTENT_TITLE": "Profile information",
+        "CONTENT_SUBTITLE": "Contact details and preferences",
+        "TODO": "TODO: Wire profile form submission",
+        "ACTIONS": {
+          "SAVE": "Save changes"
+        },
+        "FIELDS": {
+          "FIRST_NAME": "First name",
+          "LAST_NAME": "Last name",
+          "PHONE": "Phone number"
+        },
+        "PLACEHOLDER": {
+          "FIRST_NAME": "Enter first name",
+          "LAST_NAME": "Enter last name",
+          "PHONE": "Enter phone number"
+        }
+      },
+      "NOTIFICATIONS": {
+        "TITLE": "Notifications",
+        "SUBTITLE": "Configure notification channels",
+        "CONTENT_TITLE": "Notification preferences",
+        "CONTENT_SUBTITLE": "Select how and when to receive alerts",
+        "TODO": "TODO: Persist notification preferences",
+        "ACTIONS": {
+          "SAVE": "Save preferences"
+        },
+        "FIELDS": {
+          "CHANNEL": "Channel",
+          "FREQUENCY": "Frequency"
+        },
+        "CHANNELS": {
+          "EMAIL": "Email",
+          "SMS": "SMS",
+          "IN_APP": "In-app"
+        },
+        "FREQUENCIES": {
+          "REALTIME": "Real-time",
+          "DAILY": "Daily digest",
+          "WEEKLY": "Weekly summary"
+        }
+      },
+      "SYSTEM": {
+        "TITLE": "System configuration",
+        "SUBTITLE": "Organisation-wide defaults",
+        "CONTENT_TITLE": "System defaults",
+        "CONTENT_SUBTITLE": "Timezone, workweek, and localisation",
+        "TODO": "TODO: Wire system configuration persistence",
+        "ACTIONS": {
+          "SAVE": "Save configuration",
+          "RESET_DEFAULT": "Reset to default"
+        },
+        "FIELDS": {
+          "TIMEZONE": "Timezone",
+          "WORKWEEK": "Workweek"
+        },
+        "TIMEZONES": {
+          "BKK": "(UTC+07:00) Bangkok",
+          "UTC": "(UTC) Coordinated Universal Time"
+        },
+        "WORKWEEKS": {
+          "STANDARD": "Monday to Friday",
+          "CUSTOM": "Custom schedule"
+        }
+      },
+      "SECURITY": {
+        "TITLE": "Security settings",
+        "SUBTITLE": "Authentication and password policies",
+        "CONTENT_TITLE": "Security controls",
+        "CONTENT_SUBTITLE": "MFA, password policy, and enforcement",
+        "TODO": "TODO: Implement security policy enforcement",
+        "ACTIONS": {
+          "SAVE": "Save security settings",
+          "ENFORCE": "Enforce policy"
+        },
+        "FIELDS": {
+          "MFA": "Multi-factor authentication",
+          "PASSWORD_POLICY": "Password policy"
+        },
+        "MFA": {
+          "REQUIRED": "Required",
+          "OPTIONAL": "Optional"
+        },
+        "PASSWORD_POLICY": {
+          "STANDARD": "Standard",
+          "STRICT": "Strict"
+        }
+      }
+    }
+  }
+}

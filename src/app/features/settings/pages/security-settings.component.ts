@@ -1,0 +1,45 @@
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FilterField, PageAction, PageLayoutComponent } from '../../../shared/components/page-layout/page-layout.component';
+
+@Component({
+  selector: 'app-security-settings',
+  standalone: true,
+  imports: [PageLayoutComponent],
+  template: `
+    <app-page-layout
+      moduleKey="settings"
+      pageKey="security"
+      pageTitleKey="PAGES.SETTINGS.SECURITY.TITLE"
+      pageSubtitleKey="PAGES.SETTINGS.SECURITY.SUBTITLE"
+      contentTitleKey="PAGES.SETTINGS.SECURITY.CONTENT_TITLE"
+      contentSubtitleKey="PAGES.SETTINGS.SECURITY.CONTENT_SUBTITLE"
+      todoKey="PAGES.SETTINGS.SECURITY.TODO"
+      [actions]="actions"
+      [filterFields]="filterFields"
+      [tableHeaderKeys]="[]"
+      [showExportButton]="false"
+    ></app-page-layout>
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
+})
+export class SecuritySettingsComponent {
+  protected readonly actions: PageAction[] = [
+    { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.SAVE', icon: 'save', variant: 'primary' },
+    { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.ENFORCE', icon: 'verified_user', variant: 'secondary' }
+  ];
+
+  protected readonly filterFields: FilterField[] = [
+    {
+      labelKey: 'PAGES.SETTINGS.SECURITY.FIELDS.MFA',
+      type: 'select',
+      queryKey: 'mfa',
+      optionKeys: ['PAGES.SETTINGS.SECURITY.MFA.REQUIRED', 'PAGES.SETTINGS.SECURITY.MFA.OPTIONAL']
+    },
+    {
+      labelKey: 'PAGES.SETTINGS.SECURITY.FIELDS.PASSWORD_POLICY',
+      type: 'select',
+      queryKey: 'passwordPolicy',
+      optionKeys: ['PAGES.SETTINGS.SECURITY.PASSWORD_POLICY.STANDARD', 'PAGES.SETTINGS.SECURITY.PASSWORD_POLICY.STRICT']
+    }
+  ];
+}
