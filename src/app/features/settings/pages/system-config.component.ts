@@ -16,7 +16,7 @@ import { FilterField, PageAction, PageLayoutComponent } from '../../../shared/co
       todoKey="PAGES.SETTINGS.SYSTEM.TODO"
       [actions]="actions"
       [filterFields]="filterFields"
-      [tableHeaderKeys]="[]"
+      [tableHeaderKeys]="tableHeaders"
       [showExportButton]="false"
     ></app-page-layout>
   `,
@@ -25,7 +25,8 @@ import { FilterField, PageAction, PageLayoutComponent } from '../../../shared/co
 export class SystemConfigComponent {
   protected readonly actions: PageAction[] = [
     { labelKey: 'PAGES.SETTINGS.SYSTEM.ACTIONS.SAVE', icon: 'save', variant: 'primary' },
-    { labelKey: 'PAGES.SETTINGS.SYSTEM.ACTIONS.RESET_DEFAULT', icon: 'restart_alt', variant: 'secondary' }
+    { labelKey: 'PAGES.SETTINGS.SYSTEM.ACTIONS.SYNC', icon: 'sync', variant: 'secondary' },
+    { labelKey: 'PAGES.SETTINGS.SYSTEM.ACTIONS.RESET_DEFAULT', icon: 'restart_alt', variant: 'ghost' }
   ];
 
   protected readonly filterFields: FilterField[] = [
@@ -41,5 +42,12 @@ export class SystemConfigComponent {
       queryKey: 'workweek',
       optionKeys: ['PAGES.SETTINGS.SYSTEM.WORKWEEKS.STANDARD', 'PAGES.SETTINGS.SYSTEM.WORKWEEKS.CUSTOM']
     }
+  ];
+
+  protected readonly tableHeaders: string[] = [
+    'PAGES.SETTINGS.SYSTEM.COLUMNS.CONFIGURATION',
+    'PAGES.SETTINGS.SYSTEM.COLUMNS.VALUE',
+    'PAGES.SETTINGS.SYSTEM.COLUMNS.OWNER',
+    'PAGES.SETTINGS.SYSTEM.COLUMNS.UPDATED'
   ];
 }

@@ -16,7 +16,7 @@ import { FilterField, PageAction, PageLayoutComponent } from '../../../shared/co
       todoKey="PAGES.SETTINGS.SECURITY.TODO"
       [actions]="actions"
       [filterFields]="filterFields"
-      [tableHeaderKeys]="[]"
+      [tableHeaderKeys]="tableHeaders"
       [showExportButton]="false"
     ></app-page-layout>
   `,
@@ -25,7 +25,8 @@ import { FilterField, PageAction, PageLayoutComponent } from '../../../shared/co
 export class SecuritySettingsComponent {
   protected readonly actions: PageAction[] = [
     { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.SAVE', icon: 'save', variant: 'primary' },
-    { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.ENFORCE', icon: 'verified_user', variant: 'secondary' }
+    { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.ENFORCE', icon: 'verified_user', variant: 'secondary' },
+    { labelKey: 'PAGES.SETTINGS.SECURITY.ACTIONS.RUN_AUDIT', icon: 'manage_search', variant: 'ghost' }
   ];
 
   protected readonly filterFields: FilterField[] = [
@@ -41,5 +42,12 @@ export class SecuritySettingsComponent {
       queryKey: 'passwordPolicy',
       optionKeys: ['PAGES.SETTINGS.SECURITY.PASSWORD_POLICY.STANDARD', 'PAGES.SETTINGS.SECURITY.PASSWORD_POLICY.STRICT']
     }
+  ];
+
+  protected readonly tableHeaders: string[] = [
+    'PAGES.SETTINGS.SECURITY.COLUMNS.CONTROL',
+    'PAGES.SETTINGS.SECURITY.COLUMNS.STATUS',
+    'PAGES.SETTINGS.SECURITY.COLUMNS.LAST_REVIEW',
+    'PAGES.SETTINGS.SECURITY.COLUMNS.OWNER'
   ];
 }

@@ -8,6 +8,24 @@ export const SIDEBAR_MENU: MenuItem[] = [
     routerLinkActiveOptions: { exact: true }
   },
   {
+    labelKey: 'SIDEBAR.ORGANIZATION.TITLE',
+    icon: 'account_tree',
+    menuKey: 'organization',
+    requiredRole: ['Manager', 'Admin'],
+    children: [
+      {
+        labelKey: 'SIDEBAR.ORGANIZATION.STRUCTURE',
+        route: '/organization/structure',
+        icon: 'schema'
+      },
+      {
+        labelKey: 'SIDEBAR.ORGANIZATION.WORKFORCE_PLAN',
+        route: '/organization/workforce-plan',
+        icon: 'stacked_bar_chart'
+      }
+    ]
+  },
+  {
     labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.TITLE',
     icon: 'people',
     menuKey: 'employee-records',

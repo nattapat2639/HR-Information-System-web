@@ -80,13 +80,20 @@
       "IN_PROGRESS": "In progress",
       "SUBMITTED": "Submitted",
       "SUSPENDED": "Suspended",
-      "CLOSED": "Closed"
+      "CLOSED": "Closed",
+      "ON_LEAVE": "On leave",
+      "PROBATION": "Probation"
     },
     "DEPARTMENTS": {
       "ALL": "All departments",
       "HR": "Human Resources",
       "IT": "Technology",
-      "FINANCE": "Finance"
+      "FINANCE": "Finance",
+      "MARKETING": "Marketing",
+      "CUSTOMER_SUCCESS": "Customer Success",
+      "OPERATIONS": "Operations",
+      "SALES": "Sales",
+      "DATA_ANALYTICS": "Data & Analytics"
     },
     "LOCATIONS": {
       "ALL": "All locations",
@@ -122,6 +129,11 @@
   },
   "SIDEBAR": {
     "DASHBOARD": "Dashboard",
+    "ORGANIZATION": {
+      "TITLE": "Organization",
+      "STRUCTURE": "Org structure",
+      "WORKFORCE_PLAN": "Workforce plan"
+    },
     "EMPLOYEE_RECORDS": {
       "TITLE": "Employee Records",
       "ALL": "All employees",
@@ -241,6 +253,55 @@
           "NAME": "Name",
           "DEPARTMENT": "Department",
           "LEVEL": "Level"
+        }
+      }
+    },
+    "ORGANIZATION": {
+      "STRUCTURE": {
+        "TITLE": "Organization structure",
+        "SUBTITLE": "Overview of departments, leads, and headcount",
+        "CONTENT_TITLE": "Department breakdown",
+        "CONTENT_SUBTITLE": "Headcount coverage, open roles, and focus areas",
+        "TODO": "TODO: Connect org chart visualisation and role hierarchy",
+        "NOTE": "Headcount snapshot aligns with HRIS data as of March 2025.",
+        "ACTIONS": {
+          "EXPORT": "Export org chart",
+          "UPDATE": "Update structure"
+        },
+        "COLUMNS": {
+          "DEPARTMENT": "Department",
+          "LEAD": "Department lead",
+          "HEADCOUNT": "Headcount",
+          "OPEN_ROLES": "Open roles",
+          "FOCUS": "Primary focus"
+        }
+      },
+      "WORKFORCE_PLAN": {
+        "TITLE": "Workforce plan",
+        "SUBTITLE": "Compare approved headcount to demand forecast",
+        "CONTENT_TITLE": "Hiring roadmap",
+        "CONTENT_SUBTITLE": "Approved positions, attrition outlook, and next hires",
+        "TODO": "TODO: Link to capacity planning workbook and approval workflow",
+        "NOTE": "Scenario assumes FY2025 approved budget and attrition trend.",
+        "ACTIONS": {
+          "EXPORT": "Export workforce plan",
+          "PUBLISH": "Publish plan update",
+          "REQUEST": "Request additional headcount"
+        },
+        "FILTERS": {
+          "ATTRITION": "Attrition risk"
+        },
+        "ATTRITION": {
+          "LOW": "Low",
+          "MEDIUM": "Medium",
+          "HIGH": "High"
+        },
+        "COLUMNS": {
+          "DEPARTMENT": "Department",
+          "CURRENT_HEADCOUNT": "Current headcount",
+          "APPROVED_Q3": "Approved Q3 headcount",
+          "ATTRITION_RISK": "Attrition risk",
+          "NEXT_HIRE": "Next critical hire"
         }
       }
     },
@@ -719,13 +780,21 @@
         "CONTENT_TITLE": "System defaults",
         "CONTENT_SUBTITLE": "Timezone, workweek, and localisation",
         "TODO": "TODO: Wire system configuration persistence",
+        "NOTE": "Platform defaults sync nightly with the production environment.",
         "ACTIONS": {
           "SAVE": "Save configuration",
+          "SYNC": "Sync with production",
           "RESET_DEFAULT": "Reset to default"
         },
         "FIELDS": {
           "TIMEZONE": "Timezone",
           "WORKWEEK": "Workweek"
+        },
+        "COLUMNS": {
+          "CONFIGURATION": "Configuration",
+          "VALUE": "Current value",
+          "OWNER": "Owner",
+          "UPDATED": "Last updated"
         },
         "TIMEZONES": {
           "BKK": "(UTC+07:00) Bangkok",
@@ -742,13 +811,21 @@
         "CONTENT_TITLE": "Security controls",
         "CONTENT_SUBTITLE": "MFA, password policy, and enforcement",
         "TODO": "TODO: Implement security policy enforcement",
+        "NOTE": "Security dashboard tracks the latest control reviews and audit status.",
         "ACTIONS": {
           "SAVE": "Save security settings",
-          "ENFORCE": "Enforce policy"
+          "ENFORCE": "Enforce policy",
+          "RUN_AUDIT": "Run access review"
         },
         "FIELDS": {
           "MFA": "Multi-factor authentication",
           "PASSWORD_POLICY": "Password policy"
+        },
+        "COLUMNS": {
+          "CONTROL": "Control",
+          "STATUS": "Status",
+          "LAST_REVIEW": "Last review",
+          "OWNER": "Owner"
         },
         "MFA": {
           "REQUIRED": "Required",
