@@ -50,25 +50,34 @@ export class SidebarComponent {
   }
 
   shouldShowMenu(item: MenuItem): boolean {
-    if (item.children?.length) {
-      return item.children.some((child) => this.shouldShowMenu(child));
-    }
-
     const hasPermission =
       !item.requiredPermission || this.authContext.hasPermission(item.requiredPermission);
     if (!hasPermission) {
       return false;
     }
 
-    if (!item.requiredRole) {
+    const hasRole = this.hasRequiredRole(item.requiredRole);
+    if (!hasRole) {
+      return false;
+    }
+
+    if (item.children?.length) {
+      return item.children.some((child) => this.shouldShowMenu(child));
+    }
+
+    return true;
+  }
+
+  private hasRequiredRole(requiredRole?: string | string[]): boolean {
+    if (!requiredRole) {
       return true;
     }
 
-    if (Array.isArray(item.requiredRole)) {
-      return item.requiredRole.some((role) => this.authContext.hasRole(role));
+    if (Array.isArray(requiredRole)) {
+      return requiredRole.some((role) => this.authContext.hasRole(role));
     }
 
-    return this.authContext.hasRole(item.requiredRole);
+    return this.authContext.hasRole(requiredRole);
   }
 
   handleNavigate(): void {

@@ -45,6 +45,11 @@
       "GREETING": "Welcome back",
       "SUBHEAD_SHORT": "Enter your credentials to access the portal"
     },
+    "DEMO": {
+      "ADMIN": "Fill Admin",
+      "MANAGER": "Fill Manager",
+      "USER": "Fill Employee"
+    },
     "ROLES": {
       "Admin": "Administrator",
       "Manager": "Manager",
@@ -59,7 +64,8 @@
       "RESET_FILTERS": "Reset filters",
       "EXPORT": "Export",
       "APPLY_FILTERS": "Apply filters",
-      "CLEAR": "Clear"
+      "CLEAR": "Clear",
+      "CLOSE": "Close"
     },
     "SELECT": {
       "PLACEHOLDER": "Please select"
@@ -167,6 +173,18 @@
       "USER": "Employee",
       "MANAGER": "Manager",
       "ADMIN": "Administrator"
+    },
+    "BOOLEAN": {
+      "YES": "Yes",
+      "NO": "No"
+    },
+    "FIELD_TYPES": {
+      "TEXT": "Text",
+      "NUMBER": "Number",
+      "DATE": "Date",
+      "EMAIL": "Email",
+      "SELECT": "Dropdown",
+      "MULTI_SELECT": "Multi-select"
     }
   },
   "SIDEBAR": {
@@ -180,7 +198,8 @@
       "TITLE": "Employee Records",
       "ALL": "All employees",
       "PROFILE": "Employee profile",
-      "SEARCH": "Search employee"
+      "SEARCH": "Search employee",
+      "FIELD_CONFIG": "Field definitions"
     },
     "LEAVE_MANAGEMENT": {
       "TITLE": "Leave Management",
@@ -246,172 +265,6 @@
       "ACTIONS": {
         "CREATE_REQUEST": "Create request",
         "APPROVALS": "Go to approvals"
-      }
-  },
-  "ORGANIZATION": {
-    "STRUCTURE": {
-      "SYNC_SUCCESS": "Organization structure synced successfully.",
-      "EXPORT_SUCCESS": "Organization structure exported."
-    },
-    "WORKFORCE_PLAN": {
-      "PUBLISH_SUCCESS": "Workforce plan published for this quarter.",
-      "REQUEST_CREATED": "Headcount request submitted for review.",
-      "REQUEST_INVALID": "Please provide department and headcount before submitting.",
-      "EXPORT_SUCCESS": "Workforce plan exported."
-    }
-  },
-  "SETTINGS": {
-    "SYSTEM": {
-      "UPDATE_SUCCESS": "System defaults updated.",
-      "RESET_SUCCESS": "System defaults reset to baseline.",
-      "SYNC_SUCCESS": "System defaults synchronised with production.",
-      "NO_CHANGES": "No system configuration changes detected."
-    },
-    "SECURITY": {
-      "UPDATE_SUCCESS": "Security controls updated.",
-      "ENFORCE_SUCCESS": "Security policies enforced.",
-      "AUDIT_SUCCESS": "Security audit logged.",
-      "NO_CONTROLS": "Please provide at least one security control update.",
-      "NO_CHANGES": "No security updates detected."
-    }
-  },
-    "EMPLOYEE_RECORDS": {
-      "ACTIONS": {
-        "VIEW_PROFILE": "View profile"
-      },
-      "LIST": {
-        "TITLE": "All employees",
-        "SUBTITLE": "Browse and manage employee master data",
-        "CONTENT_TITLE": "Employee directory",
-        "CONTENT_SUBTITLE": "Filter by department, job level, or status",
-        "TODO": "TODO: Load employees from API and enable inline actions",
-        "ACTIONS": {
-          "ADD": "Add employee",
-          "VIEW_PROFILE": "View profile"
-        },
-        "SELECTION": {
-          "COUNT": "{{count}} selected",
-          "OPEN": "Open profiles",
-          "EXPORT": "Export selected",
-          "CLEAR": "Clear selection"
-        },
-        "COLUMNS": {
-          "EMPLOYEE_ID": "Employee ID",
-          "NAME": "Name",
-          "POSITION": "Position",
-          "DEPARTMENT": "Department",
-          "STATUS": "Status",
-          "LAST_EVENT": "Latest event"
-        }
-      },
-      "PROFILE": {
-        "TITLE": "Employee profile",
-        "SUBTITLE": "Maintain personal and employment information",
-        "CONTENT_TITLE": "Profile summary",
-        "CONTENT_SUBTITLE": "Personal info, work details, attachments",
-        "TODO": "TODO: Render profile tabs and editable sections",
-        "ACTIONS": {
-          "EDIT": "Edit profile",
-          "DOWNLOAD": "Download profile",
-          "MORE": "More actions"
-        },
-        "CARDS": {
-          "PERSONAL": "Personal information",
-          "JOB": "Job details",
-          "CONTACT": "Contact & emergency",
-          "EMPLOYEE_ID": "Employee number",
-          "FULL_NAME": "Full name",
-          "NATIONAL_ID": "National ID",
-          "BIRTHDATE": "Birth date",
-          "TITLE": "Current role",
-          "MANAGER": "Manager",
-          "DEPARTMENT": "Department",
-          "LOCATION": "Location",
-          "EMAIL": "Email",
-          "PHONE": "Phone",
-          "EMERGENCY": "Emergency contact"
-        },
-        "TIMELINE": {
-          "TITLE": "Career timeline",
-          "SUBTITLE": "Recent movements and milestones",
-          "CATEGORIES": {
-            "PROMOTION": "Promotion",
-            "RECOGNITION": "Recognition",
-            "TRANSFER": "Internal transfer",
-            "DEVELOPMENT": "Development"
-          },
-          "EVENTS": {
-            "PROMOTION_TITLE": "Promoted to Principal Platform Engineer",
-            "PROMOTION_DESC": "Expanded scope to lead reliability roadmap and coach guild leads.",
-            "RECOGNITION_TITLE": "Quarterly leadership recognition",
-            "RECOGNITION_DESC": "Awarded for resolving major outage and mentoring new hires.",
-            "TRANSFER_TITLE": "Rotation into Platform Reliability squad",
-            "TRANSFER_DESC": "Moved from API team to site reliability to accelerate observability initiatives.",
-            "DEVELOPMENT_TITLE": "Completed leadership accelerator",
-            "DEVELOPMENT_DESC": "Finished 6-week program covering stakeholder communication and coaching."
-          }
-        },
-        "DOCUMENTS": {
-          "TITLE": "Documents & artefacts",
-          "SUBTITLE": "Contracts, reviews, and certifications",
-          "CONTRACT": "Employment contract (v3)",
-          "PERFORMANCE": "FY2024 performance review",
-          "CERTIFICATION": "AWS Practitioner certificate",
-          "UPDATED": "Updated {{date}}",
-          "EMPTY": "No documents available yet."
-        },
-        "SELECT_EMPLOYEE": "Select employee",
-        "EMPTY": "No employee profile to display. Please choose from the list.",
-        "PLACEHOLDER": {
-          "EMPLOYEE_ID": "Search by employee number"
-        },
-        "DIRECTORY": {
-          "TITLE": "Employee directory",
-          "SUBTITLE": "Search and select an employee to load their profile",
-          "SEARCH_LABEL": "Search employee",
-          "SEARCH_PLACEHOLDER": "Type a name, employee ID, or department",
-          "COUNT": "{{count}} employees",
-          "NO_RESULTS": "No employees match \"{{query}}\".",
-          "EMPTY": "No employees available yet.",
-          "LOADING": "Loading employees..."
-        },
-        "SUMMARY": {
-          "TITLE": "Profile overview",
-          "SUBTITLE": "Personal, job, and contact details with timeline"
-        }
-      },
-      "SEARCH": {
-        "TITLE": "Search employee",
-        "SUBTITLE": "Run advanced criteria across the workforce",
-        "CONTENT_TITLE": "Search results",
-        "CONTENT_SUBTITLE": "Matching employees",
-        "TODO": "TODO: Connect advanced search filters and export",
-        "ACTIONS": {
-          "SAVE_FILTER": "Save filter"
-        },
-        "COLUMNS": {
-          "EMPLOYEE_ID": "Employee ID",
-          "NAME": "Name",
-          "DEPARTMENT": "Department",
-          "LEVEL": "Level",
-          "STATUS": "Status",
-          "EVENT": "Event"
-        },
-        "INSIGHTS": {
-          "SUBTITLE": "Derived from current filters",
-          "STATUS_HEADER": "Headcount by status",
-          "DEPARTMENT_HEADER": "Top departments",
-          "NO_DATA": "No insights for the current filters yet."
-        },
-        "SELECTION": {
-          "COUNT": "{{count}} selected",
-          "OPEN": "Open profiles",
-          "EXPORT": "Export selected",
-          "CLEAR": "Clear selection"
-        }
-      },
-      "EXPORT": {
-        "SUCCESS": "Employee data exported to CSV."
       }
     },
     "ORGANIZATION": {
@@ -514,6 +367,362 @@
           "HEATMAP_HEADCOUNT": "{{current}} filled of {{approved}} approved",
           "HEATMAP_OPEN_ROLES": "Open roles",
           "HEATMAP_EMPTY": "No open roles for the current filters."
+        }
+      }
+    },
+    "SETTINGS": {
+      "PROFILE": {
+        "TITLE": "Profile settings",
+        "SUBTITLE": "Manage personal account details",
+        "CONTENT_TITLE": "Profile information",
+        "CONTENT_SUBTITLE": "Contact details and preferences",
+        "TODO": "TODO: Wire profile form submission",
+        "ACTIONS": {
+          "SAVE": "Save changes"
+        },
+        "FIELDS": {
+          "FIRST_NAME": "First name",
+          "LAST_NAME": "Last name",
+          "PHONE": "Phone number"
+        },
+        "PLACEHOLDER": {
+          "FIRST_NAME": "Enter first name",
+          "LAST_NAME": "Enter last name",
+          "PHONE": "Enter phone number"
+        }
+      },
+      "NOTIFICATIONS": {
+        "TITLE": "Notifications",
+        "SUBTITLE": "Configure notification channels",
+        "CONTENT_TITLE": "Notification preferences",
+        "CONTENT_SUBTITLE": "Select how and when to receive alerts",
+        "TODO": "TODO: Persist notification preferences",
+        "ACTIONS": {
+          "SAVE": "Save preferences"
+        },
+        "FIELDS": {
+          "CHANNEL": "Channel",
+          "FREQUENCY": "Frequency"
+        },
+        "CHANNELS": {
+          "EMAIL": "Email",
+          "SMS": "SMS",
+          "IN_APP": "In-app"
+        },
+        "FREQUENCIES": {
+          "REALTIME": "Real-time",
+          "DAILY": "Daily digest",
+          "WEEKLY": "Weekly summary"
+        }
+      },
+      "SYSTEM": {
+        "TITLE": "System configuration",
+        "SUBTITLE": "Organisation-wide defaults",
+        "CONTENT_TITLE": "System defaults",
+        "CONTENT_SUBTITLE": "Timezone, workweek, and localisation",
+        "TODO": "TODO: Wire system configuration persistence",
+        "NOTE": "Platform defaults sync nightly with the production environment.",
+        "ACTIONS": {
+          "SAVE": "Save configuration",
+          "SYNC": "Sync with production",
+          "RESET_DEFAULT": "Reset to default"
+        },
+        "FIELDS": {
+          "TIMEZONE": "Timezone",
+          "WORKWEEK": "Workweek"
+        },
+        "COLUMNS": {
+          "CONFIGURATION": "Configuration",
+          "VALUE": "Current value",
+          "OWNER": "Owner",
+          "UPDATED": "Last updated"
+        },
+        "TIMEZONES": {
+          "BKK": "(UTC+07:00) Bangkok",
+          "UTC": "(UTC) Coordinated Universal Time"
+        },
+        "WORKWEEKS": {
+          "STANDARD": "Monday to Friday",
+          "CUSTOM": "Custom schedule"
+        }
+      },
+      "SECURITY": {
+        "TITLE": "Security settings",
+        "SUBTITLE": "Authentication and password policies",
+        "CONTENT_TITLE": "Security controls",
+        "CONTENT_SUBTITLE": "MFA, password policy, and enforcement",
+        "TODO": "TODO: Implement security policy enforcement",
+        "NOTE": "Security dashboard tracks the latest control reviews and audit status.",
+        "ACTIONS": {
+          "SAVE": "Save security settings",
+          "ENFORCE": "Enforce policy",
+          "RUN_AUDIT": "Run access review"
+        },
+        "FIELDS": {
+          "MFA": "Multi-factor authentication",
+          "PASSWORD_POLICY": "Password policy"
+        },
+        "COLUMNS": {
+          "CONTROL": "Control",
+          "STATUS": "Status",
+          "LAST_REVIEW": "Last review",
+          "OWNER": "Owner"
+        },
+        "MFA": {
+          "REQUIRED": "Required",
+          "OPTIONAL": "Optional"
+        },
+        "PASSWORD_POLICY": {
+          "STANDARD": "Standard",
+          "STRICT": "Strict"
+        }
+      }
+    },
+    "EMPLOYEE_RECORDS": {
+      "ACTIONS": {
+        "VIEW_PROFILE": "View profile"
+      },
+      "LIST": {
+        "TITLE": "All employees",
+        "SUBTITLE": "Browse and manage employee master data",
+        "CONTENT_TITLE": "Employee directory",
+        "CONTENT_SUBTITLE": "Filter by department, job level, or status",
+        "TODO": "Use filters or add a new employee to get started.",
+        "ACTIONS": {
+          "ADD": "Add employee",
+          "VIEW_PROFILE": "View profile"
+        },
+        "SELECTION": {
+          "COUNT": "{{count}} selected",
+          "OPEN": "Open profiles",
+          "EXPORT": "Export selected",
+          "CLEAR": "Clear selection"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "Employee ID",
+          "NAME": "Name",
+          "POSITION": "Position",
+          "DEPARTMENT": "Department",
+          "STATUS": "Status",
+          "LAST_EVENT": "Latest event"
+        },
+        "MESSAGES": {
+          "CREATED": "Employee created successfully."
+        },
+        "ERRORS": {
+          "EMPLOYEE_NUMBER_EXISTS": "That employee number is already in use.",
+          "GENERIC": "Could not create the employee. Please try again."
+        },
+        "VALIDATION": {
+          "REQUIRED": "This field is required.",
+          "EMPLOYEE_NUMBER_CONFLICT": "This employee number is already in use."
+        },
+        "CREATE": {
+          "TITLE": "New employee",
+          "SUBTITLE": "Capture basic details to create an employee record.",
+          "FIELDS": {
+            "EMPLOYEE_NUMBER": "Employee number",
+            "FULL_NAME": "Full name",
+            "DEPARTMENT": "Department",
+            "POSITION": "Position",
+            "STATUS": "Status",
+            "HIRED_AT": "Hire date"
+          },
+          "ACTION_CANCEL": "Cancel",
+          "ACTION_SUBMIT": "Create employee"
+        }
+      },
+      "PROFILE": {
+        "TITLE": "Employee profile",
+        "SUBTITLE": "Maintain personal and employment information",
+        "CONTENT_TITLE": "Profile summary",
+        "CONTENT_SUBTITLE": "Personal info, work details, attachments",
+        "TODO": "TODO: Render profile tabs and editable sections",
+        "ACTIONS": {
+          "EDIT": "Edit profile",
+          "DOWNLOAD": "Download profile",
+          "MORE": "More actions"
+        },
+        "CARDS": {
+          "PERSONAL": "Personal information",
+          "JOB": "Job details",
+          "CONTACT": "Contact & emergency",
+          "EMPLOYEE_ID": "Employee number",
+          "FULL_NAME": "Full name",
+          "NATIONAL_ID": "National ID",
+          "BIRTHDATE": "Birth date",
+          "TITLE": "Current role",
+          "MANAGER": "Manager",
+          "DEPARTMENT": "Department",
+          "LOCATION": "Location",
+          "EMAIL": "Email",
+          "PHONE": "Phone",
+          "EMERGENCY": "Emergency contact"
+        },
+        "TIMELINE": {
+          "TITLE": "Career timeline",
+          "SUBTITLE": "Recent movements and milestones",
+          "CATEGORIES": {
+            "PROMOTION": "Promotion",
+            "RECOGNITION": "Recognition",
+            "TRANSFER": "Internal transfer",
+            "DEVELOPMENT": "Development"
+          },
+          "EVENTS": {
+            "PROMOTION_TITLE": "Promoted to Principal Platform Engineer",
+            "PROMOTION_DESC": "Expanded scope to lead reliability roadmap and coach guild leads.",
+            "RECOGNITION_TITLE": "Quarterly leadership recognition",
+            "RECOGNITION_DESC": "Awarded for resolving major outage and mentoring new hires.",
+            "TRANSFER_TITLE": "Rotation into Platform Reliability squad",
+            "TRANSFER_DESC": "Moved from API team to site reliability to accelerate observability initiatives.",
+            "DEVELOPMENT_TITLE": "Completed leadership accelerator",
+            "DEVELOPMENT_DESC": "Finished 6-week program covering stakeholder communication and coaching."
+          }
+        },
+        "DOCUMENTS": {
+          "TITLE": "Documents & artefacts",
+          "SUBTITLE": "Contracts, reviews, and certifications",
+          "CONTRACT": "Employment contract (v3)",
+          "PERFORMANCE": "FY2024 performance review",
+          "CERTIFICATION": "AWS Practitioner certificate",
+          "UPDATED": "Updated {{date}}",
+          "EMPTY": "No documents available yet."
+        },
+        "SELECT_EMPLOYEE": "Select employee",
+        "EMPTY": "No employee profile to display. Please choose from the list.",
+        "PLACEHOLDER": {
+          "EMPLOYEE_ID": "Search by employee number"
+        },
+        "DIRECTORY": {
+          "TITLE": "Employee directory",
+          "SUBTITLE": "Search and select an employee to load their profile",
+          "SEARCH_LABEL": "Search employee",
+          "SEARCH_PLACEHOLDER": "Type a name, employee ID, or department",
+          "DEPARTMENT_FILTER_LABEL": "Filter by department",
+          "DEPARTMENT_FILTER_ALL": "All departments",
+          "COUNT": "{{count}} employees",
+          "NO_RESULTS": "No employees match \"{{query}}\".",
+          "EMPTY": "No employees available yet.",
+          "LOADING": "Loading employees..."
+        },
+        "SUMMARY": {
+          "TITLE": "Profile overview",
+          "SUBTITLE": "Personal, job, and contact details with timeline"
+        },
+        "DYNAMIC": {
+          "TITLE": "Extended profile fields",
+          "SUBTITLE": "Values captured from configurable employee field definitions",
+          "ACTION_EDIT": "Edit fields",
+          "ACTION_SAVE": "Save fields",
+          "EDITING": "Editing dynamic fields",
+          "MESSAGES": {
+            "UPDATED": "Employee profile fields updated."
+          },
+          "ERRORS": {
+            "REQUIRED": "Please provide a value for \"{{field}}\"."
+          },
+          "LAST_UPDATED": "Updated {{date}} by {{user}}",
+          "EMPTY": "No dynamic fields available yet."
+        }
+      },
+      "SEARCH": {
+        "TITLE": "Search employee",
+        "SUBTITLE": "Run advanced criteria across the workforce",
+        "CONTENT_TITLE": "Search results",
+        "CONTENT_SUBTITLE": "Matching employees",
+        "TODO": "TODO: Connect advanced search filters and export",
+        "ACTIONS": {
+          "SAVE_FILTER": "Save filter"
+        },
+        "COLUMNS": {
+          "EMPLOYEE_ID": "Employee ID",
+          "NAME": "Name",
+          "DEPARTMENT": "Department",
+          "LEVEL": "Level",
+          "STATUS": "Status",
+          "EVENT": "Event"
+        },
+        "INSIGHTS": {
+          "SUBTITLE": "Derived from current filters",
+          "STATUS_HEADER": "Headcount by status",
+          "DEPARTMENT_HEADER": "Top departments",
+          "NO_DATA": "No insights for the current filters yet."
+        },
+        "SELECTION": {
+          "COUNT": "{{count}} selected",
+          "OPEN": "Open profiles",
+          "EXPORT": "Export selected",
+          "CLEAR": "Clear selection"
+        }
+      },
+      "EXPORT": {
+        "SUCCESS": "Employee data exported to CSV."
+      },
+      "FIELD_CONFIG": {
+        "TITLE": "Employee field definitions",
+        "SUBTITLE": "Configure master data fields for the employee registry",
+        "ACTIONS": {
+          "ADD": "Add field",
+          "EDIT": "Edit",
+          "DELETE": "Delete",
+          "ADD_OPTION": "Add option",
+          "REMOVE_OPTION": "Remove",
+          "CANCEL": "Cancel",
+          "SAVE_CHANGES": "Save changes",
+          "SAVE_NEW": "Create field"
+        },
+        "HEADINGS": {
+          "EDITING": "Editing field",
+          "CREATING": "New field",
+          "NEW_FIELD": "New field definition"
+        },
+        "TABLE": {
+          "FIELD_KEY": "Field key",
+          "DISPLAY_NAME": "Display name",
+          "DATA_TYPE": "Data type",
+          "CATEGORY": "Category",
+          "REQUIRED": "Required",
+          "ACTIVE": "Active",
+          "OPTIONS": "Options",
+          "EMPTY": "No field definitions created yet."
+        },
+        "FORM": {
+          "FIELD_KEY": "Field key",
+          "DISPLAY_NAME": "Display name",
+          "DATA_TYPE": "Data type",
+          "CATEGORY": "Category",
+          "SORT_ORDER": "Display order",
+          "IS_REQUIRED": "Field is mandatory",
+          "IS_ACTIVE": "Field is active",
+          "DESCRIPTION": "Description",
+          "OPTIONS": "Selectable options",
+          "OPTION_LABEL": "Option label",
+          "OPTION_VALUE": "Stored value (optional)",
+          "OPTION_SORT_ORDER": "Order"
+        },
+        "VALIDATION": {
+          "FIELD_KEY": "Please provide a unique field key.",
+          "DISPLAY_NAME": "Display name is required.",
+          "OPTION_LABEL": "Option label cannot be empty."
+        },
+        "MESSAGES": {
+          "CREATED": "Field definition created successfully.",
+          "UPDATED": "Field definition updated.",
+          "DELETED": "Field definition removed.",
+          "LOAD_FAILED": "Unable to load field definitions."
+        },
+        "ERRORS": {
+          "FIELD_KEY_EXISTS": "Field key already exists. Please use another value.",
+          "FIELD_KEY_REQUIRED": "Field key is required."
+        },
+        "OPTION_HINT": "Options are required for dropdown style fields.",
+        "CONFIRM_DELETE": "Remove the field \"{{name}}\"? Ensure existing employee data is reviewed.",
+        "CATEGORIES": {
+          "PERSONAL": "Personal",
+          "EMPLOYMENT": "Employment",
+          "COMPENSATION": "Compensation",
+          "EMERGENCY": "Emergency",
+          "CUSTOM": "Custom"
         }
       }
     },
@@ -938,114 +1147,6 @@
           "ROLE": "Role",
           "DESCRIPTION": "Description",
           "ASSIGNED_USERS": "Assigned users"
-        }
-      }
-    },
-    "SETTINGS": {
-      "PROFILE": {
-        "TITLE": "Profile settings",
-        "SUBTITLE": "Manage personal account details",
-        "CONTENT_TITLE": "Profile information",
-        "CONTENT_SUBTITLE": "Contact details and preferences",
-        "TODO": "TODO: Wire profile form submission",
-        "ACTIONS": {
-          "SAVE": "Save changes"
-        },
-        "FIELDS": {
-          "FIRST_NAME": "First name",
-          "LAST_NAME": "Last name",
-          "PHONE": "Phone number"
-        },
-        "PLACEHOLDER": {
-          "FIRST_NAME": "Enter first name",
-          "LAST_NAME": "Enter last name",
-          "PHONE": "Enter phone number"
-        }
-      },
-      "NOTIFICATIONS": {
-        "TITLE": "Notifications",
-        "SUBTITLE": "Configure notification channels",
-        "CONTENT_TITLE": "Notification preferences",
-        "CONTENT_SUBTITLE": "Select how and when to receive alerts",
-        "TODO": "TODO: Persist notification preferences",
-        "ACTIONS": {
-          "SAVE": "Save preferences"
-        },
-        "FIELDS": {
-          "CHANNEL": "Channel",
-          "FREQUENCY": "Frequency"
-        },
-        "CHANNELS": {
-          "EMAIL": "Email",
-          "SMS": "SMS",
-          "IN_APP": "In-app"
-        },
-        "FREQUENCIES": {
-          "REALTIME": "Real-time",
-          "DAILY": "Daily digest",
-          "WEEKLY": "Weekly summary"
-        }
-      },
-      "SYSTEM": {
-        "TITLE": "System configuration",
-        "SUBTITLE": "Organisation-wide defaults",
-        "CONTENT_TITLE": "System defaults",
-        "CONTENT_SUBTITLE": "Timezone, workweek, and localisation",
-        "TODO": "TODO: Wire system configuration persistence",
-        "NOTE": "Platform defaults sync nightly with the production environment.",
-        "ACTIONS": {
-          "SAVE": "Save configuration",
-          "SYNC": "Sync with production",
-          "RESET_DEFAULT": "Reset to default"
-        },
-        "FIELDS": {
-          "TIMEZONE": "Timezone",
-          "WORKWEEK": "Workweek"
-        },
-        "COLUMNS": {
-          "CONFIGURATION": "Configuration",
-          "VALUE": "Current value",
-          "OWNER": "Owner",
-          "UPDATED": "Last updated"
-        },
-        "TIMEZONES": {
-          "BKK": "(UTC+07:00) Bangkok",
-          "UTC": "(UTC) Coordinated Universal Time"
-        },
-        "WORKWEEKS": {
-          "STANDARD": "Monday to Friday",
-          "CUSTOM": "Custom schedule"
-        }
-      },
-      "SECURITY": {
-        "TITLE": "Security settings",
-        "SUBTITLE": "Authentication and password policies",
-        "CONTENT_TITLE": "Security controls",
-        "CONTENT_SUBTITLE": "MFA, password policy, and enforcement",
-        "TODO": "TODO: Implement security policy enforcement",
-        "NOTE": "Security dashboard tracks the latest control reviews and audit status.",
-        "ACTIONS": {
-          "SAVE": "Save security settings",
-          "ENFORCE": "Enforce policy",
-          "RUN_AUDIT": "Run access review"
-        },
-        "FIELDS": {
-          "MFA": "Multi-factor authentication",
-          "PASSWORD_POLICY": "Password policy"
-        },
-        "COLUMNS": {
-          "CONTROL": "Control",
-          "STATUS": "Status",
-          "LAST_REVIEW": "Last review",
-          "OWNER": "Owner"
-        },
-        "MFA": {
-          "REQUIRED": "Required",
-          "OPTIONAL": "Optional"
-        },
-        "PASSWORD_POLICY": {
-          "STANDARD": "Standard",
-          "STRICT": "Strict"
         }
       }
     }

@@ -77,6 +77,18 @@ import { AuthContextService } from '../../../core/services/auth-context.service'
           <p class="text-center text-[11px] text-gray-500">
             {{ 'AUTH.LOGIN.HINT' | translate:{ admin: adminPassword, manager: managerPassword, user: userPassword } }}
           </p>
+
+          <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
+            <button
+              *ngFor="let account of demoAccounts"
+              type="button"
+              class="flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1 text-[11px] font-semibold text-gray-600 hover:border-blue-300 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              (click)="applyDemoAccount(account.email, account.password)"
+            >
+              <span class="material-icons text-[14px]">person</span>
+              {{ account.labelKey | translate }}
+            </button>
+          </div>
         </form>
       </div>
     </section>
@@ -96,6 +108,24 @@ export class LoginComponent implements OnInit {
   protected readonly adminPassword = 'Admin@123';
   protected readonly managerPassword = 'Manager@123';
   protected readonly userPassword = 'Employee@123';
+
+  protected readonly demoAccounts: Array<{ labelKey: string; email: string; password: string }> = [
+    {
+      labelKey: 'AUTH.LOGIN.DEMO.ADMIN',
+      email: 'korn.la-ongsri@company.com',
+      password: this.adminPassword
+    },
+    {
+      labelKey: 'AUTH.LOGIN.DEMO.MANAGER',
+      email: 'supaporn.pradchaphet@company.com',
+      password: this.managerPassword
+    },
+    {
+      labelKey: 'AUTH.LOGIN.DEMO.USER',
+      email: 'supaporn.intharachai@company.com',
+      password: this.userPassword
+    }
+  ];
 
   protected readonly form = this.fb.nonNullable.group({
     email: ['', [Validators.required, Validators.email]],
@@ -144,5 +174,11 @@ export class LoginComponent implements OnInit {
         this.loading.set(false);
       }
     });
+  }
+
+  protected applyDemoAccount(email: string, password: string): void {
+    this.form.patchValue({ email, password });
+    this.form.markAsDirty();
+    this.errorMessage.set(null);
   }
 }

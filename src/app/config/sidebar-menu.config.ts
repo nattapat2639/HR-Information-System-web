@@ -29,21 +29,31 @@ export const SIDEBAR_MENU: MenuItem[] = [
     labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.TITLE',
     icon: 'people',
     menuKey: 'employee-records',
+    requiredRole: ['Manager', 'Admin'],
     children: [
       {
         labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.ALL',
         route: '/employee-records/all',
-        icon: 'list_alt'
+        icon: 'list_alt',
+        requiredRole: 'Admin'
       },
       {
         labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.PROFILE',
         route: '/employee-records/profile',
-        icon: 'badge'
+        icon: 'badge',
+        requiredRole: ['Manager', 'Admin']
       },
       {
         labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.SEARCH',
         route: '/employee-records/search',
-        icon: 'search'
+        icon: 'search',
+        requiredRole: ['Manager', 'Admin']
+      },
+      {
+        labelKey: 'SIDEBAR.EMPLOYEE_RECORDS.FIELD_CONFIG',
+        route: '/employee-records/fields',
+        icon: 'tune',
+        requiredRole: 'Admin'
       }
     ]
   },

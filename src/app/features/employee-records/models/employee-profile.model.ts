@@ -7,6 +7,19 @@ export interface EmployeeSummary {
   status: string;
 }
 
+export interface Employee extends EmployeeSummary {
+  hiredAt: string;
+}
+
+export interface EmployeeCreateRequest {
+  employeeNumber: string;
+  fullName: string;
+  department: string;
+  position: string;
+  status: string;
+  hiredAt: string;
+}
+
 export interface EmployeeProfile {
   employeeNumber: string;
   fullName: string;
