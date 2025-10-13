@@ -66,7 +66,8 @@ export const SIDEBAR_MENU: MenuItem[] = [
         labelKey: 'SIDEBAR.LEAVE_MANAGEMENT.TEAM_REQUESTS',
         route: '/leave-management/team',
         icon: 'group',
-        requiredRole: ['Manager', 'Admin']
+        requiredRole: ['Manager', 'Admin'],
+        requiredPermission: 'team:approve'
       },
       {
         labelKey: 'SIDEBAR.LEAVE_MANAGEMENT.HISTORY',
@@ -113,13 +114,15 @@ export const SIDEBAR_MENU: MenuItem[] = [
         labelKey: 'SIDEBAR.PERFORMANCE.TEAM_REVIEWS',
         route: '/performance/team',
         icon: 'groups',
-        requiredRole: ['Manager', 'Admin']
+        requiredRole: ['Manager', 'Admin'],
+        requiredPermission: 'team:approve'
       },
       {
         labelKey: 'SIDEBAR.PERFORMANCE.CREATE',
         route: '/performance/create',
         icon: 'add_task',
-        requiredRole: ['Manager', 'Admin']
+        requiredRole: ['Manager', 'Admin'],
+        requiredPermission: 'team:approve'
       }
     ]
   },
@@ -180,6 +183,7 @@ export const SIDEBAR_MENU: MenuItem[] = [
     icon: 'insert_chart',
     menuKey: 'reports',
     requiredRole: 'Admin',
+    requiredPermission: 'reports:access',
     children: [
       {
         labelKey: 'SIDEBAR.REPORTS.EMPLOYEE',
@@ -213,6 +217,7 @@ export const SIDEBAR_MENU: MenuItem[] = [
     icon: 'manage_accounts',
     menuKey: 'user-management',
     requiredRole: 'Admin',
+    requiredPermission: 'users:manage',
     children: [
       {
         labelKey: 'SIDEBAR.USER_MANAGEMENT.LIST',
@@ -250,13 +255,15 @@ export const SIDEBAR_MENU: MenuItem[] = [
         labelKey: 'SIDEBAR.SETTINGS.SYSTEM',
         route: '/settings/system',
         icon: 'tune',
-        requiredRole: 'Admin'
+        requiredRole: 'Admin',
+        requiredPermission: 'settings:manage'
       },
       {
         labelKey: 'SIDEBAR.SETTINGS.SECURITY',
         route: '/settings/security',
         icon: 'lock',
-        requiredRole: 'Admin'
+        requiredRole: 'Admin',
+        requiredPermission: 'security:manage'
       }
     ]
   }

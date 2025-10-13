@@ -38,13 +38,22 @@
         </span>
       </button>
 
-      <div class="flex items-center gap-2">
+      <div class="flex items-center gap-3">
         <div class="hidden text-right md:flex flex-col">
-          <span class="text-xs font-medium text-gray-700">{{ 'APP.USER.NAME' | translate }}</span>
-          <span class="text-[11px] text-gray-500">{{ 'APP.USER.ROLE' | translate }}</span>
+          <span class="text-xs font-medium text-gray-700">
+            {{ displayName() || ('AUTH.LOGIN.GREETING' | translate) }}
+          </span>
+          <span class="text-[11px] text-gray-500">
+            {{ ('AUTH.ROLES.' + (primaryRole() || 'User')) | translate }}
+          </span>
         </div>
-        <button type="button" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="User menu">
-          <span class="material-icons text-[20px]">person</span>
+        <button
+          type="button"
+          class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          aria-label="Sign out"
+          (click)="logout()"
+        >
+          <span class="material-icons text-[20px]">logout</span>
         </button>
       </div>
     </div>

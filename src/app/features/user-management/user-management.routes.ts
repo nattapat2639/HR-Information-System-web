@@ -9,19 +9,31 @@ export const USER_MANAGEMENT_ROUTES: Routes = [
     path: 'list',
     component: UserListComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.USERS.LIST.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.USERS.LIST.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'users:manage'
+    }
   },
   {
     path: 'create',
     component: UserFormComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.USERS.CREATE.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.USERS.CREATE.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'users:manage'
+    }
   },
   {
     path: 'roles',
     component: UserRolesComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.USERS.ROLES.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.USERS.ROLES.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'users:manage'
+    }
   },
   {
     path: '',

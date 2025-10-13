@@ -22,7 +22,11 @@ export const LEAVE_ROUTES: Routes = [
     path: 'team',
     component: TeamLeaveListComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.LEAVE.TEAM.TITLE', requiredRoles: ['Manager', 'Admin'] }
+    data: {
+      titleKey: 'PAGES.LEAVE.TEAM.TITLE',
+      requiredRoles: ['Manager', 'Admin'],
+      requiredPermission: 'team:approve'
+    }
   },
   {
     path: 'history',

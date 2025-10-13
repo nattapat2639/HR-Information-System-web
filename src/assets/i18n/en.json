@@ -12,6 +12,45 @@
       "ROLE": "System Administrator"
     }
   },
+  "AUTH": {
+    "LOGIN": {
+      "HEADLINE": "Sign in to HRIS",
+      "SUBHEAD": "Use your role credentials to continue",
+      "FIELDS": {
+        "EMAIL": "Work email",
+        "PASSWORD": "Password"
+      },
+      "ACTIONS": {
+        "SIGN_IN": "Sign in",
+        "SIGNING_IN": "Signing in..."
+      },
+      "ERRORS": {
+        "INVALID": "Invalid email or password.",
+        "EMAIL": "Please enter a valid email address.",
+        "PASSWORD": "Password is required.",
+        "INVALID_INPUT": "Please provide both email and password.",
+        "INVALID_CREDENTIALS": "Email or password is incorrect.",
+        "SUSPENDED": "Your account is currently suspended.",
+        "MISSING_TOKEN": "Authentication token is missing.",
+        "INVALID_TOKEN": "Authentication token is invalid.",
+        "EXPIRED": "Your session has expired. Please sign in again."
+      },
+      "INVALID_INPUT": "Please provide both email and password.",
+      "INVALID_CREDENTIALS": "Email or password is incorrect.",
+      "SUSPENDED": "Your account is currently suspended.",
+      "MISSING_TOKEN": "Authentication token is missing.",
+      "INVALID_TOKEN": "Authentication token is invalid.",
+      "EXPIRED": "Your session has expired. Please sign in again.",
+      "HINT": "Admin: {{admin}} · Manager: {{manager}} · Employee: {{user}}",
+      "GREETING": "Welcome back",
+      "SUBHEAD_SHORT": "Enter your credentials to access the portal"
+    },
+    "ROLES": {
+      "Admin": "Administrator",
+      "Manager": "Manager",
+      "User": "Employee"
+    }
+  },
   "COMMON": {
     "SECTIONS": {
       "FILTERS": "Filters"
@@ -19,7 +58,8 @@
     "ACTIONS": {
       "RESET_FILTERS": "Reset filters",
       "EXPORT": "Export",
-      "APPLY_FILTERS": "Apply filters"
+      "APPLY_FILTERS": "Apply filters",
+      "CLEAR": "Clear"
     },
     "SELECT": {
       "PLACEHOLDER": "Please select"
@@ -236,6 +276,9 @@
     }
   },
     "EMPLOYEE_RECORDS": {
+      "ACTIONS": {
+        "VIEW_PROFILE": "View profile"
+      },
       "LIST": {
         "TITLE": "All employees",
         "SUBTITLE": "Browse and manage employee master data",
@@ -243,7 +286,14 @@
         "CONTENT_SUBTITLE": "Filter by department, job level, or status",
         "TODO": "TODO: Load employees from API and enable inline actions",
         "ACTIONS": {
-          "ADD": "Add employee"
+          "ADD": "Add employee",
+          "VIEW_PROFILE": "View profile"
+        },
+        "SELECTION": {
+          "COUNT": "{{count}} selected",
+          "OPEN": "Open profiles",
+          "EXPORT": "Export selected",
+          "CLEAR": "Clear selection"
         },
         "COLUMNS": {
           "EMPLOYEE_ID": "Employee ID",
@@ -270,10 +320,12 @@
           "JOB": "Job details",
           "CONTACT": "Contact & emergency",
           "EMPLOYEE_ID": "Employee number",
+          "FULL_NAME": "Full name",
           "NATIONAL_ID": "National ID",
           "BIRTHDATE": "Birth date",
           "TITLE": "Current role",
           "MANAGER": "Manager",
+          "DEPARTMENT": "Department",
           "LOCATION": "Location",
           "EMAIL": "Email",
           "PHONE": "Phone",
@@ -305,10 +357,27 @@
           "CONTRACT": "Employment contract (v3)",
           "PERFORMANCE": "FY2024 performance review",
           "CERTIFICATION": "AWS Practitioner certificate",
-          "UPDATED": "Updated {{date}}"
+          "UPDATED": "Updated {{date}}",
+          "EMPTY": "No documents available yet."
         },
+        "SELECT_EMPLOYEE": "Select employee",
+        "EMPTY": "No employee profile to display. Please choose from the list.",
         "PLACEHOLDER": {
           "EMPLOYEE_ID": "Search by employee number"
+        },
+        "DIRECTORY": {
+          "TITLE": "Employee directory",
+          "SUBTITLE": "Search and select an employee to load their profile",
+          "SEARCH_LABEL": "Search employee",
+          "SEARCH_PLACEHOLDER": "Type a name, employee ID, or department",
+          "COUNT": "{{count}} employees",
+          "NO_RESULTS": "No employees match \"{{query}}\".",
+          "EMPTY": "No employees available yet.",
+          "LOADING": "Loading employees..."
+        },
+        "SUMMARY": {
+          "TITLE": "Profile overview",
+          "SUBTITLE": "Personal, job, and contact details with timeline"
         }
       },
       "SEARCH": {
@@ -327,6 +396,18 @@
           "LEVEL": "Level",
           "STATUS": "Status",
           "EVENT": "Event"
+        },
+        "INSIGHTS": {
+          "SUBTITLE": "Derived from current filters",
+          "STATUS_HEADER": "Headcount by status",
+          "DEPARTMENT_HEADER": "Top departments",
+          "NO_DATA": "No insights for the current filters yet."
+        },
+        "SELECTION": {
+          "COUNT": "{{count}} selected",
+          "OPEN": "Open profiles",
+          "EXPORT": "Export selected",
+          "CLEAR": "Clear selection"
         }
       },
       "EXPORT": {

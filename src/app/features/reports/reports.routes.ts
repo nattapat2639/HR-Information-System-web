@@ -11,31 +11,51 @@ export const REPORT_ROUTES: Routes = [
     path: 'employee',
     component: EmployeeReportComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.REPORTS.EMPLOYEE.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.REPORTS.EMPLOYEE.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'reports:access'
+    }
   },
   {
     path: 'leave',
     component: LeaveReportComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.REPORTS.LEAVE.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.REPORTS.LEAVE.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'reports:access'
+    }
   },
   {
     path: 'payroll',
     component: PayrollReportComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.REPORTS.PAYROLL.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.REPORTS.PAYROLL.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'reports:access'
+    }
   },
   {
     path: 'performance',
     component: PerformanceReportComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.REPORTS.PERFORMANCE.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.REPORTS.PERFORMANCE.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'reports:access'
+    }
   },
   {
     path: 'exports',
     component: ExportDataComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.REPORTS.EXPORT.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.REPORTS.EXPORT.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'reports:access'
+    }
   },
   {
     path: '',

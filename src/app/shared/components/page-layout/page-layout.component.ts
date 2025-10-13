@@ -51,6 +51,8 @@ export class PageLayoutComponent {
   @Input() showExportButton = false;
   @Input() exportLabelKey = 'COMMON.ACTIONS.EXPORT';
   @Input() showResetFilterButton = true;
+  @Input() enableSelection = false;
+  @Input() selectionKey: string | null = null;
   @Input() set moduleKey(value: string) {
     if (value === this._moduleKey) {
       return;
@@ -75,6 +77,7 @@ export class PageLayoutComponent {
   private hasLoaded = false;
   private readonly filterKeyMap = new Map<string, string>();
   private controlNames: string[] = [];
+  private selectedKeySet = new Set<string>();
 
   readonly form = new FormGroup({});
   readonly pageNumber = signal(1);
@@ -90,6 +93,8 @@ export class PageLayoutComponent {
   @Output() readonly actionTriggered = new EventEmitter<PageActionEvent>();
   @Output() readonly filtersChanged = new EventEmitter<Record<string, string>>();
   @Output() readonly exportRequested = new EventEmitter<Record<string, string>>();
+  @Output() readonly rowActionTriggered = new EventEmitter<PageRowActionEvent>();
+  @Output() readonly selectionChanged = new EventEmitter<PageSelectionChangeEvent>();
 
   readonly headerKeys = computed(() =>
     this.tableHeaderKeys.length > 0 ? this.tableHeaderKeys : this.dynamicHeaders()
@@ -103,6 +108,8 @@ export class PageLayoutComponent {
   readonly emptyMessageKey = computed(
     () => this.backendNoteKey() ?? this.todoKey ?? 'COMMON.TABLE.NO_DATA'
   );
+  readonly isSelectionEnabled = computed(() => this.enableSelection && !!this.selectionKey);
+  readonly selectedCount = computed(() => this.selectedKeySet.size);
   readonly totalPages = computed(() => {
     const size = Math.max(this.pageSize(), 1);
     const total = this.totalCount();
@@ -267,6 +274,21 @@ export class PageLayoutComponent {
     } else {
       this.dynamicHeaders.set([]);
     }
+    if (this.isSelectionEnabled()) {
+      const validKeys = new Set<string>();
+      for (const row of response.rows ?? []) {
+        const key = this.resolveRowKey(row);
+        if (key) {
+          validKeys.add(key);
+        }
+      }
+      for (const key of Array.from(this.selectedKeySet)) {
+        if (!validKeys.has(key)) {
+          this.selectedKeySet.delete(key);
+        }
+      }
+      this.emitSelectionChange();
+    }
     const totalPages = this.totalPages();
     if (this.totalCount() > 0 && this.pageNumber() > totalPages) {
       this.pageNumber.set(totalPages);
@@ -399,9 +421,116 @@ export class PageLayoutComponent {
   private emitCurrentFilters(): void {
     this.filtersChanged.emit(this.collectFilterQuery());
   }
+
+  onRowAction(action: { labelKey: string; icon: string; actionKey: string }, row: PageRow): void {
+    this.rowActionTriggered.emit({
+      action,
+      row,
+      filters: this.collectFilterQuery()
+    });
+  }
+
+  onToggleRowSelection(row: PageRow, event: Event): void {
+    if (!this.isSelectionEnabled()) {
+      return;
+    }
+    const key = this.resolveRowKey(row);
+    if (!key) {
+      return;
+    }
+
+    const target = event.target as HTMLInputElement | null;
+    const checked = !!target?.checked;
+    if (checked) {
+      this.selectedKeySet.add(key);
+    } else {
+      this.selectedKeySet.delete(key);
+    }
+    this.emitSelectionChange();
+  }
+
+  onToggleAllSelection(event: Event): void {
+    if (!this.isSelectionEnabled()) {
+      return;
+    }
+    const target = event.target as HTMLInputElement | null;
+    const checked = !!target?.checked;
+    if (checked) {
+      for (const row of this.tableRows()) {
+        const key = this.resolveRowKey(row);
+        if (key) {
+          this.selectedKeySet.add(key);
+        }
+      }
+    } else {
+      this.selectedKeySet.clear();
+    }
+    this.emitSelectionChange();
+  }
+
+  isRowSelected(row: PageRow): boolean {
+    if (!this.isSelectionEnabled()) {
+      return false;
+    }
+    const key = this.resolveRowKey(row);
+    return key ? this.selectedKeySet.has(key) : false;
+  }
+
+  isAllSelected(): boolean {
+    if (!this.isSelectionEnabled()) {
+      return false;
+    }
+    const rows = this.tableRows();
+    if (rows.length === 0) {
+      return false;
+    }
+    return rows.every((row) => this.isRowSelected(row));
+  }
+
+  private resolveRowKey(row: PageRow): string | null {
+    if (!this.selectionKey) {
+      return null;
+    }
+    return row.columns[this.selectionKey] ?? null;
+  }
+
+  private emitSelectionChange(): void {
+    if (!this.isSelectionEnabled()) {
+      return;
+    }
+    const selectedRows = this.tableRows().filter((row) => this.isRowSelected(row));
+    const selectedKeys = selectedRows
+      .map((row) => this.resolveRowKey(row))
+      .filter((key): key is string => typeof key === 'string');
+    this.selectionChanged.emit({
+      keys: selectedKeys,
+      rows: selectedRows,
+      filters: this.collectFilterQuery()
+    });
+  }
+
+  clearSelection(): void {
+    if (!this.isSelectionEnabled()) {
+      return;
+    }
+    this.selectedKeySet.clear();
+    this.emitSelectionChange();
+  }
 }
 
 export interface PageActionEvent {
   action: PageAction;
+  filters: Record<string, string>;
+}
+
+export interface PageRowActionEvent {
+  action: { labelKey: string; icon: string; actionKey: string };
+  row: PageRow;
+  filters: Record<string, string>;
+}
+
+export interface PageSelectionChangeEvent {
+  keys: string[];
+  rows: PageRow[];
   filters: Record<string, string>;
 }

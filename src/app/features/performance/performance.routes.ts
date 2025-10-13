@@ -15,13 +15,21 @@ export const PERFORMANCE_ROUTES: Routes = [
     path: 'team',
     component: TeamPerformanceComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.PERFORMANCE.TEAM.TITLE', requiredRoles: ['Manager', 'Admin'] }
+    data: {
+      titleKey: 'PAGES.PERFORMANCE.TEAM.TITLE',
+      requiredRoles: ['Manager', 'Admin'],
+      requiredPermission: 'team:approve'
+    }
   },
   {
     path: 'create',
     component: PerformanceCreateComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.PERFORMANCE.CREATE.TITLE', requiredRoles: ['Manager', 'Admin'] }
+    data: {
+      titleKey: 'PAGES.PERFORMANCE.CREATE.TITLE',
+      requiredRoles: ['Manager', 'Admin'],
+      requiredPermission: 'team:approve'
+    }
   },
   {
     path: '',

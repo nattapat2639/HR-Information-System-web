@@ -148,6 +148,17 @@
             <thead class="bg-gray-50">
               <tr>
                 <th
+                  *ngIf="isSelectionEnabled()"
+                  class="px-3 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-500"
+                >
+                  <input
+                    type="checkbox"
+                    class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    [checked]="isAllSelected()"
+                    (change)="onToggleAllSelection($event)"
+                  />
+                </th>
+                <th
                   *ngFor="let header of headerKeys(); trackBy: trackByKey"
                   scope="col"
                   class="px-4 py-3 text-left text-[11px] font-semibold uppercase tracking-wider text-gray-500"
@@ -164,6 +175,17 @@
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
               <tr *ngFor="let row of tableRows(); trackBy: trackRow">
+                <td
+                  *ngIf="isSelectionEnabled()"
+                  class="px-3 py-3 text-sm text-gray-700"
+                >
+                  <input
+                    type="checkbox"
+                    class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                    [checked]="isRowSelected(row)"
+                    (change)="onToggleRowSelection(row, $event)"
+                  />
+                </td>
                 <td *ngFor="let header of headerKeys(); trackBy: trackColumn" class="px-4 py-3 text-sm text-gray-700">
                   <ng-container *ngIf="isBadgeColumn(header); else plainCell">
                     <span
@@ -182,6 +204,7 @@
                     *ngFor="let action of row.actions || []"
                     type="button"
                     class="inline-flex items-center gap-1 rounded-md border border-gray-200 px-2 py-1 text-xs text-gray-600 hover:border-blue-300 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    (click)="onRowAction(action, row)"
                   >
                     <span class="material-icons text-[16px]">{{ action.icon }}</span>
                     {{ action.labelKey | translate }}

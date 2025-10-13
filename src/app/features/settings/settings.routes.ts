@@ -22,13 +22,21 @@ export const SETTINGS_ROUTES: Routes = [
     path: 'system',
     component: SystemConfigComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.SETTINGS.SYSTEM.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.SETTINGS.SYSTEM.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'settings:manage'
+    }
   },
   {
     path: 'security',
     component: SecuritySettingsComponent,
     canMatch: [roleGuard],
-    data: { titleKey: 'PAGES.SETTINGS.SECURITY.TITLE', requiredRoles: ['Admin'] }
+    data: {
+      titleKey: 'PAGES.SETTINGS.SECURITY.TITLE',
+      requiredRoles: ['Admin'],
+      requiredPermission: 'security:manage'
+    }
   },
   {
     path: '',
