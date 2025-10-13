@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, DestroyRef, Input, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, EventEmitter, Input, Output, computed, inject, signal } from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
@@ -10,6 +10,8 @@ export interface PageAction {
   icon?: string;
   variant?: 'primary' | 'secondary' | 'ghost';
   todoKey?: string;
+  actionKey?: string;
+  disabled?: boolean;
 }
 
 export interface FilterField {
@@ -85,6 +87,9 @@ export class PageLayoutComponent {
   readonly backendNoteKey = signal<string | null>(null);
   readonly tableRows = signal<PageRow[]>([]);
   private readonly dynamicHeaders = signal<string[]>([]);
+  @Output() readonly actionTriggered = new EventEmitter<PageActionEvent>();
+  @Output() readonly filtersChanged = new EventEmitter<Record<string, string>>();
+  @Output() readonly exportRequested = new EventEmitter<Record<string, string>>();
 
   readonly headerKeys = computed(() =>
     this.tableHeaderKeys.length > 0 ? this.tableHeaderKeys : this.dynamicHeaders()
@@ -124,6 +129,9 @@ export class PageLayoutComponent {
   getActionClasses(action: PageAction): string {
     const base =
       'inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-blue-500';
+    if (action.disabled) {
+      return `${base} bg-gray-200 text-gray-400 cursor-not-allowed`;
+    }
     switch (action.variant) {
       case 'primary':
         return `${base} bg-blue-600 text-white hover:bg-blue-700`;
@@ -158,6 +166,7 @@ export class PageLayoutComponent {
     this.form.reset();
     this.pageNumber.set(1);
     this.hasLoaded = false;
+    this.emitCurrentFilters();
     this.loadPageData(true);
   }
 
@@ -168,6 +177,7 @@ export class PageLayoutComponent {
   onSubmit(): void {
     this.pageNumber.set(1);
     this.loadPageData(true);
+    this.emitCurrentFilters();
   }
 
   goToPreviousPage(): void {
@@ -222,21 +232,9 @@ export class PageLayoutComponent {
       pageSize: this.pageSize().toString()
     };
 
-    const controls = this.form.controls as Record<string, FormControl>;
-    for (const key of Object.keys(controls)) {
-      const control = controls[key];
-      const raw = control?.value;
-      if (raw === null || raw === undefined) {
-        continue;
-      }
-
-      const value = String(raw).trim();
-      if (!value) {
-        continue;
-      }
-
-      const queryKey = this.filterKeyMap.get(key) ?? key;
-      query[queryKey] = value;
+    const filterQuery = this.collectFilterQuery();
+    for (const [key, value] of Object.entries(filterQuery)) {
+      query[key] = value;
     }
 
     this.pageDataService
@@ -321,4 +319,89 @@ export class PageLayoutComponent {
       .replace(/[^a-z0-9]+/g, '_')
       .replace(/^_+|_+$/g, '');
   }
+
+  private collectFilterQuery(): Record<string, string> {
+    const result: Record<string, string> = {};
+    const controls = this.form.controls as Record<string, FormControl>;
+
+    for (const key of Object.keys(controls)) {
+      const control = controls[key];
+      const raw = control?.value;
+      if (raw === null || raw === undefined) {
+        continue;
+      }
+
+      const value = String(raw).trim();
+      if (!value) {
+        continue;
+      }
+
+      const queryKey = this.filterKeyMap.get(key) ?? key;
+      result[queryKey] = value;
+    }
+
+    return result;
+  }
+
+  onAction(action: PageAction): void {
+    if (action.disabled) {
+      return;
+    }
+
+    this.actionTriggered.emit({
+      action,
+      filters: this.collectFilterQuery()
+    });
+  }
+
+  onExport(): void {
+    this.exportRequested.emit(this.collectFilterQuery());
+  }
+
+  isBadgeColumn(header: string): boolean {
+    return /STATUS|STATE|EVENT/i.test(header);
+  }
+
+  getBadgeClass(header: string, value: string): string {
+    const normalized = value.toLowerCase();
+    if (/status/i.test(header)) {
+      if (normalized.includes('active') || normalized.includes('completed')) {
+        return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
+      }
+      if (normalized.includes('leave') || normalized.includes('pending') || normalized.includes('probation')) {
+        return 'bg-amber-100 text-amber-700 border border-amber-200';
+      }
+      if (normalized.includes('inactive') || normalized.includes('terminated') || normalized.includes('rejected')) {
+        return 'bg-rose-100 text-rose-700 border border-rose-200';
+      }
+      return 'bg-slate-100 text-slate-700 border border-slate-200';
+    }
+
+    if (/event/i.test(header)) {
+      if (normalized.includes('promotion')) {
+        return 'bg-indigo-100 text-indigo-700 border border-indigo-200';
+      }
+      if (normalized.includes('transfer')) {
+        return 'bg-blue-100 text-blue-700 border border-blue-200';
+      }
+      if (normalized.includes('award') || normalized.includes('recognition')) {
+        return 'bg-emerald-100 text-emerald-700 border border-emerald-200';
+      }
+      if (normalized.includes('probation')) {
+        return 'bg-amber-100 text-amber-700 border border-amber-200';
+      }
+      return 'bg-slate-100 text-slate-700 border border-slate-200';
+    }
+
+    return 'bg-slate-100 text-slate-700 border border-slate-200';
+  }
+
+  private emitCurrentFilters(): void {
+    this.filtersChanged.emit(this.collectFilterQuery());
+  }
+}
+
+export interface PageActionEvent {
+  action: PageAction;
+  filters: Record<string, string>;
 }

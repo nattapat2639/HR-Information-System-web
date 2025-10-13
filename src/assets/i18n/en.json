@@ -66,7 +66,9 @@
       "NONE": "--"
     },
     "ERROR": {
-      "LOAD_FAILED": "Unable to load data. Please try again."
+      "LOAD_FAILED": "Unable to load data. Please try again.",
+      "ACTION_FAILED": "Action failed. Please try again.",
+      "ACTION_UNSUPPORTED": "Action not supported yet."
     },
     "STATUSES": {
       "ALL": "All statuses",
@@ -205,7 +207,34 @@
         "CREATE_REQUEST": "Create request",
         "APPROVALS": "Go to approvals"
       }
+  },
+  "ORGANIZATION": {
+    "STRUCTURE": {
+      "SYNC_SUCCESS": "Organization structure synced successfully.",
+      "EXPORT_SUCCESS": "Organization structure exported."
     },
+    "WORKFORCE_PLAN": {
+      "PUBLISH_SUCCESS": "Workforce plan published for this quarter.",
+      "REQUEST_CREATED": "Headcount request submitted for review.",
+      "REQUEST_INVALID": "Please provide department and headcount before submitting.",
+      "EXPORT_SUCCESS": "Workforce plan exported."
+    }
+  },
+  "SETTINGS": {
+    "SYSTEM": {
+      "UPDATE_SUCCESS": "System defaults updated.",
+      "RESET_SUCCESS": "System defaults reset to baseline.",
+      "SYNC_SUCCESS": "System defaults synchronised with production.",
+      "NO_CHANGES": "No system configuration changes detected."
+    },
+    "SECURITY": {
+      "UPDATE_SUCCESS": "Security controls updated.",
+      "ENFORCE_SUCCESS": "Security policies enforced.",
+      "AUDIT_SUCCESS": "Security audit logged.",
+      "NO_CONTROLS": "Please provide at least one security control update.",
+      "NO_CHANGES": "No security updates detected."
+    }
+  },
     "EMPLOYEE_RECORDS": {
       "LIST": {
         "TITLE": "All employees",
@@ -221,7 +250,8 @@
           "NAME": "Name",
           "POSITION": "Position",
           "DEPARTMENT": "Department",
-          "STATUS": "Status"
+          "STATUS": "Status",
+          "LAST_EVENT": "Latest event"
         }
       },
       "PROFILE": {
@@ -234,6 +264,48 @@
           "EDIT": "Edit profile",
           "DOWNLOAD": "Download profile",
           "MORE": "More actions"
+        },
+        "CARDS": {
+          "PERSONAL": "Personal information",
+          "JOB": "Job details",
+          "CONTACT": "Contact & emergency",
+          "EMPLOYEE_ID": "Employee number",
+          "NATIONAL_ID": "National ID",
+          "BIRTHDATE": "Birth date",
+          "TITLE": "Current role",
+          "MANAGER": "Manager",
+          "LOCATION": "Location",
+          "EMAIL": "Email",
+          "PHONE": "Phone",
+          "EMERGENCY": "Emergency contact"
+        },
+        "TIMELINE": {
+          "TITLE": "Career timeline",
+          "SUBTITLE": "Recent movements and milestones",
+          "CATEGORIES": {
+            "PROMOTION": "Promotion",
+            "RECOGNITION": "Recognition",
+            "TRANSFER": "Internal transfer",
+            "DEVELOPMENT": "Development"
+          },
+          "EVENTS": {
+            "PROMOTION_TITLE": "Promoted to Principal Platform Engineer",
+            "PROMOTION_DESC": "Expanded scope to lead reliability roadmap and coach guild leads.",
+            "RECOGNITION_TITLE": "Quarterly leadership recognition",
+            "RECOGNITION_DESC": "Awarded for resolving major outage and mentoring new hires.",
+            "TRANSFER_TITLE": "Rotation into Platform Reliability squad",
+            "TRANSFER_DESC": "Moved from API team to site reliability to accelerate observability initiatives.",
+            "DEVELOPMENT_TITLE": "Completed leadership accelerator",
+            "DEVELOPMENT_DESC": "Finished 6-week program covering stakeholder communication and coaching."
+          }
+        },
+        "DOCUMENTS": {
+          "TITLE": "Documents & artefacts",
+          "SUBTITLE": "Contracts, reviews, and certifications",
+          "CONTRACT": "Employment contract (v3)",
+          "PERFORMANCE": "FY2024 performance review",
+          "CERTIFICATION": "AWS Practitioner certificate",
+          "UPDATED": "Updated {{date}}"
         },
         "PLACEHOLDER": {
           "EMPLOYEE_ID": "Search by employee number"
@@ -252,8 +324,13 @@
           "EMPLOYEE_ID": "Employee ID",
           "NAME": "Name",
           "DEPARTMENT": "Department",
-          "LEVEL": "Level"
+          "LEVEL": "Level",
+          "STATUS": "Status",
+          "EVENT": "Event"
         }
+      },
+      "EXPORT": {
+        "SUCCESS": "Employee data exported to CSV."
       }
     },
     "ORGANIZATION": {
@@ -294,7 +371,8 @@
         "ATTRITION": {
           "LOW": "Low",
           "MEDIUM": "Medium",
-          "HIGH": "High"
+          "HIGH": "High",
+          "UNKNOWN": "Unknown"
         },
         "COLUMNS": {
           "DEPARTMENT": "Department",
@@ -302,6 +380,59 @@
           "APPROVED_Q3": "Approved Q3 headcount",
           "ATTRITION_RISK": "Attrition risk",
           "NEXT_HIRE": "Next critical hire"
+        }
+      },
+      "INSIGHTS": {
+        "NO_SYNC": "Not synced yet",
+        "METRICS": {
+          "HEADCOUNT": "Total headcount",
+          "OPEN_ROLES": "Open roles",
+          "OPEN_ROLES_HINT": "Positions pending approval or hiring",
+          "DEPARTMENTS": "Departments in scope",
+          "DEPARTMENTS_HINT": "Filtered departments included in the snapshot",
+          "LAST_SYNC": "Last synced",
+          "TIMEZONE_HINT": "Times shown in local timezone",
+          "APPROVED": "Approved capacity: {{count}}"
+        },
+        "ATTRITION": {
+          "TITLE": "Attrition risk mix",
+          "SUBTITLE": "Based on workforce plan tracking",
+          "EMPTY": "No attrition data for the current filters."
+        },
+        "FOCUS": {
+          "TITLE": "Focus themes",
+          "SUBTITLE": "Top priorities owned by HR business partners",
+          "DEPARTMENTS": "{{count}} dept(s)",
+          "EMPTY": "No focus areas captured for this view."
+        },
+        "DEPARTMENTS": {
+          "STRUCTURE_TITLE": "Departments & leads",
+          "WORKFORCE_TITLE": "Capacity vs plan",
+          "SUBTITLE": "Top items based on current filters",
+          "LEAD": "Lead",
+          "FOCUS": "Focus",
+          "OPEN_ROLES": "Open roles",
+          "OPEN_ROLES_SHORT": "{{count}} open roles",
+          "CAPACITY": "Capacity",
+          "ATTRITION": "Attrition",
+          "EMPTY": "No departments match the current filters."
+        },
+        "CHARTS": {
+          "STRUCTURE_DONUT_TITLE": "Current vs planned headcount",
+          "WORKFORCE_DONUT_TITLE": "Utilisation vs plan",
+          "DONUT_SUBTITLE": "Quick utilisation snapshot",
+          "LABEL_CURRENT": "Current",
+          "LABEL_UTILIZATION": "Utilisation",
+          "PLANNED": "Planned headcount",
+          "ACTUAL": "Actual headcount",
+          "DELTA": "Gap to plan",
+          "DELTA_ON_PLAN": "On plan",
+          "HEADCOUNT_UNITS": "headcount",
+          "HEATMAP_TITLE": "Open roles heatmap",
+          "HEATMAP_SUBTITLE": "Top departments needing hires",
+          "HEATMAP_HEADCOUNT": "{{current}} filled of {{approved}} approved",
+          "HEATMAP_OPEN_ROLES": "Open roles",
+          "HEATMAP_EMPTY": "No open roles for the current filters."
         }
       }
     },
@@ -836,6 +967,33 @@
           "STRICT": "Strict"
         }
       }
+    }
+  },
+  "ORGANIZATION": {
+    "STRUCTURE": {
+      "SYNC_SUCCESS": "Organization structure synced successfully.",
+      "EXPORT_SUCCESS": "Organization structure exported."
+    },
+    "WORKFORCE_PLAN": {
+      "PUBLISH_SUCCESS": "Workforce plan published for this quarter.",
+      "REQUEST_CREATED": "Headcount request submitted for review.",
+      "REQUEST_INVALID": "Please provide department and headcount before submitting.",
+      "EXPORT_SUCCESS": "Workforce plan exported."
+    }
+  },
+  "SETTINGS": {
+    "SYSTEM": {
+      "UPDATE_SUCCESS": "System defaults updated.",
+      "RESET_SUCCESS": "System defaults reset to baseline.",
+      "SYNC_SUCCESS": "System defaults synchronised with production.",
+      "NO_CHANGES": "No system configuration changes detected."
+    },
+    "SECURITY": {
+      "UPDATE_SUCCESS": "Security controls updated.",
+      "ENFORCE_SUCCESS": "Security policies enforced.",
+      "AUDIT_SUCCESS": "Security audit logged.",
+      "NO_CONTROLS": "Please provide at least one security control update.",
+      "NO_CHANGES": "No security updates detected."
     }
   }
 }

@@ -12,6 +12,8 @@
           *ngFor="let action of actions; trackBy: trackByKey"
           type="button"
           [ngClass]="getActionClasses(action)"
+          [disabled]="action.disabled"
+          (click)="onAction(action)"
         >
           <span *ngIf="action.icon" class="material-icons text-[18px]">{{ action.icon }}</span>
           <span>{{ action.labelKey | translate }}</span>
@@ -112,6 +114,7 @@
           *ngIf="showExportButton"
           type="button"
           class="inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white px-3 py-2 text-xs font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          (click)="onExport()"
         >
           <span class="material-icons text-[18px]">file_download</span>
           {{ exportLabelKey | translate }}
@@ -161,11 +164,18 @@
             </thead>
             <tbody class="divide-y divide-gray-200 bg-white">
               <tr *ngFor="let row of tableRows(); trackBy: trackRow">
-                <td
-                  *ngFor="let header of headerKeys(); trackBy: trackColumn"
-                  class="px-4 py-3 text-sm text-gray-700"
-                >
-                  {{ getCellValue(row, header) }}
+                <td *ngFor="let header of headerKeys(); trackBy: trackColumn" class="px-4 py-3 text-sm text-gray-700">
+                  <ng-container *ngIf="isBadgeColumn(header); else plainCell">
+                    <span
+                      class="inline-flex items-center rounded-full px-2 py-1 text-xs font-medium"
+                      [ngClass]="getBadgeClass(header, getCellValue(row, header))"
+                    >
+                      {{ getCellValue(row, header) }}
+                    </span>
+                  </ng-container>
+                  <ng-template #plainCell>
+                    {{ getCellValue(row, header) }}
+                  </ng-template>
                 </td>
                 <td *ngIf="hasRowActions()" class="px-4 py-3 text-sm text-gray-500">
                   <button
