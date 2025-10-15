@@ -124,6 +124,7 @@
       "PENDING": "Pending",
       "APPROVED": "Approved",
       "REJECTED": "Rejected",
+      "WITHDRAWN": "Withdrawn",
       "COMPLETED": "Completed",
       "IN_PROGRESS": "In progress",
       "SUBMITTED": "Submitted",
@@ -731,14 +732,16 @@
         "ALL_TYPES": "All leave types",
         "ANNUAL": "Annual leave",
         "SICK": "Sick leave",
-        "UNPAID": "Unpaid leave"
+        "UNPAID": "Unpaid leave",
+        "WFH": "Work from home",
+        "FAMILY": "Family responsibility"
       },
       "MY": {
         "TITLE": "My leave requests",
         "SUBTITLE": "Submit and track personal leave",
         "CONTENT_TITLE": "Requests overview",
         "CONTENT_SUBTITLE": "Latest submissions and statuses",
-        "TODO": "TODO: Bind leave requests list with workflow actions",
+        "TODO": "No leave requests yet. Submit a new request to get started.",
         "ACTIONS": {
           "CREATE": "New leave request"
         },
@@ -754,11 +757,21 @@
         "TITLE": "Create leave request",
         "SUBTITLE": "File a new leave application",
         "CONTENT_TITLE": "Request form",
-        "CONTENT_SUBTITLE": "Fill in leave details and attachments",
-        "TODO": "TODO: Implement leave request form with validation",
+        "CONTENT_SUBTITLE": "Provide leave details and submit for approval",
         "ACTIONS": {
-          "SUBMIT": "Submit request",
-          "SAVE_DRAFT": "Save draft"
+          "SUBMIT": "Submit request"
+        },
+        "HALF_DAY": "Mark as half-day leave",
+        "REASON": "Leave reason",
+        "CONTACT": "Contact during leave",
+        "DOCUMENT": "Supporting document URL",
+        "DAYS": "days",
+        "SUBMITTING": "Submitting...",
+        "BALANCE_TITLE": "Leave balance snapshot",
+        "BALANCE_DETAIL": "Taken {{taken}} · Pending {{pending}}",
+        "ERROR": {
+          "INVALID_FORM": "Please complete all required fields before submitting.",
+          "HALF_DAY_RANGE": "Half-day leaves must start and end on the same day."
         }
       },
       "TEAM": {
@@ -766,7 +779,7 @@
         "SUBTITLE": "Review and approve team submissions",
         "CONTENT_TITLE": "Pending approvals",
         "CONTENT_SUBTITLE": "Awaiting manager action",
-        "TODO": "TODO: Connect manager approval workflow",
+        "TODO": "No team leave awaiting your decision.",
         "ACTIONS": {
           "APPROVE_SELECTED": "Approve selected",
           "REJECT_SELECTED": "Reject selected"
@@ -784,7 +797,30 @@
         "SUBTITLE": "Past approved and rejected requests",
         "CONTENT_TITLE": "Historical leave records",
         "CONTENT_SUBTITLE": "Archive of processed leave",
-        "TODO": "TODO: Load historical leave data with export"
+        "TODO": "No historical leave records available."
+      },
+      "DETAIL": {
+        "HEADER": "Leave request {{reference}}",
+        "SUBHEADER": "Requested by {{employee}}",
+        "LEAVE_TYPE": "Leave type",
+        "PERIOD": "Leave period",
+        "STATUS": "Status",
+        "REQUESTED_ON": "Requested on",
+        "REASON": "Reason provided",
+        "MANAGER_COMMENT": "Manager remarks",
+        "TIMELINE": "Approval timeline",
+        "HALF_DAY": "Half-day"
+      },
+      "CONFIRM": {
+        "WITHDRAW": "Withdraw this leave request?",
+        "REJECT_REASON": "Rejected due to coverage constraints."
+      },
+      "MESSAGES": {
+        "REQUEST_SUBMITTED": "Leave request submitted for approval.",
+        "REQUEST_WITHDRAWN": "Leave request withdrawn successfully.",
+        "REQUEST_APPROVED": "Leave request approved.",
+        "REQUEST_REJECTED": "Leave request rejected.",
+        "HISTORY_EXPORTED": "Leave history exported."
       }
     },
     "PAYROLL": {
